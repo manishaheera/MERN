@@ -6,7 +6,8 @@ const Main = () =>{
     return (
         <div className = "Main">
             
-            <p> Things I need to do: </p>
+            <span>Things I need to do: </span>
+
             <Subcontents text = "Learn React"/>
             <Subcontents text = " Climb Mt. Everest!"/>
             <Subcontents text = "Run A Marathon"/>

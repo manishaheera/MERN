@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import User from './components/UserForm'
+import User from './components/User';
 
 function App() {
+  
   return (
     <div className="App">
       <User/>

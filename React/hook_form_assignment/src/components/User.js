@@ -43,6 +43,7 @@ const User = (props) => {
 
         <h3>First Name:</h3>  {firstName}
         <h3>Last Name:</h3> {lastName}
+        <h3>Email:</h3> {email}
         <h3>Password:</h3> {password}
         <h3>Confirm Password:</h3> {confirmPassword}
 

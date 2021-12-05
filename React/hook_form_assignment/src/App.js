@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import User from './components/User';
+import User from './components/User.js';
 
 function App() {
-  
+
   return (
     <div className="App">
       <User/>
@@ -12,3 +12,4 @@ function App() {
 }
 
 export default App;
+

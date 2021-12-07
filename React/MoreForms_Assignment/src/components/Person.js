@@ -18,6 +18,7 @@ const Person = (props) =>{
             lastName : lastName,
             email : email,
             password : password,
+            confirmPassword : confirmPassword,
         }
     ])
     }
@@ -25,13 +26,13 @@ const Person = (props) =>{
     return(
         <div>
 
-        <h1> Person </h1>
-        <form onSubmit ={submitHandler}>
+        <h1> Form Validations </h1>
 
+        <form onSubmit ={submitHandler}>
             <div>
                 <p>{
                     firstName.length > 0 && firstName.length < 2 ?
-                    <span> Your first name must be atleast 2 characters </span>
+                    <span> first name must be at least 2 characters </span>
                     :null
                 }
                 </p>
@@ -42,7 +43,7 @@ const Person = (props) =>{
             <div>
                 <p>{
                     lastName.length > 0 && lastName.length < 2 ?
-                    <span> Your last name must be atleast 2 characters </span>
+                    <span> last name must be at least 2 characters </span>
                     :null
                 }</p>
 
@@ -52,8 +53,8 @@ const Person = (props) =>{
 
             <div>
                 <p>{
-                    email.length > 0 && email.length < 2 ?
-                    <span> Your email name must be atleast 2 characters </span>
+                    email.length > 0 && email.length < 5 ?
+                    <span> email must be at least 5 characters </span>
                     :null
                 }</p>
                 <label>Email Address: </label> 
@@ -63,7 +64,7 @@ const Person = (props) =>{
             <div>
                 <p>{
                     password.length > 0 && password.length < 8 ?
-                    <span> Your password must be atleast 2 characters </span>
+                    <span> password must be atleast 2 characters </span>
                     :null
                 }</p>
                 <label>Password: </label>
@@ -73,21 +74,20 @@ const Person = (props) =>{
             <div>
                 <p>{
                     confirmPassword.length > 0 && confirmPassword !== password  ?
-                    <span> Passwords must match </span>
+                    <span> passwords must match </span>
                     :null
                     }</p>
                 <label>Confirm Password: </label>
                 <input type="password" name="confirmPassword" value={confirmPassword} onChange={ (e) => setconfirmPassword(e.target.value) } />
             </div>
 
-            <input type="submit" value="Add Person" class="submit-button"/>
-
+            <input type="submit" value="Submit" class="submit-button"/>
         </form>
 
-        <p>{firstName} {lastName}</p>
-        <p> {email} </p>
-        <p> {password} </p>
-        <p> {confirmPassword} </p>
+        <p>Name: {firstName} {lastName}</p>
+        <p>Email: {email} </p>
+        <p>Password: {password} </p>
+        <p>Confirm Password: {confirmPassword} </p>
         </div>
     )
 }

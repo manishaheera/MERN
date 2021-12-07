@@ -83,6 +83,11 @@ const Person = (props) =>{
             <input type="submit" value="Add Person" class="submit-button"/>
 
         </form>
+
+        <p>{firstName} {lastName}</p>
+        <p> {email} </p>
+        <p> {password} </p>
+        <p> {confirmPassword} </p>
         </div>
     )
 }

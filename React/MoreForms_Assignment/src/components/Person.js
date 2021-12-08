@@ -87,7 +87,7 @@ const Person = (props) =>{
         <h1 className="user-submission"> AFTER-SUBMISSION </h1>
         {
             personList.map((person,index)=>(
-                <div>
+                <div className="person">
                     <p>Name: {person.firstName} {person.lastName}</p>
                     <p>Email: {person.email}</p>
                     <p>Password: {person.password}</p>

@@ -20,7 +20,13 @@ const Person = (props) =>{
             password : password,
             confirmPassword : confirmPassword,
         }
+        
     ])
+        setfirstName("");
+        setlastName("");
+        setEmail("");
+        setPassword("");
+        setconfirmPassword("");
     }
 
     return(
@@ -81,7 +87,7 @@ const Person = (props) =>{
                 <input type="password" name="confirmPassword" value={confirmPassword} onChange={ (e) => setconfirmPassword(e.target.value) } />
             </div>
 
-            <input type="submit" value="Submit" class="submit-button"/>
+            <input type="submit" value="Submit" className="submit-button"/>
         </form>
         
         <h1 className="user-submission"> AFTER-SUBMISSION </h1>

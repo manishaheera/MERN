@@ -15,9 +15,13 @@ label{
 }
 
 .user-submission{
-  color:red;
+  color:rgb(73, 147, 86);
 }
 
 .person{
   margin-bottom:50px;
+}
+
+span{
+  color:rgb(226, 33, 33);
 }

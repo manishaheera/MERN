@@ -13,3 +13,7 @@ input{
 label{
   margin-right:40px;
 }
+
+.user-submission{
+  color:red;
+}

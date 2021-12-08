@@ -9,7 +9,7 @@ const Person = (props) =>{
     const [password, setPassword] = useState("");
     const [confirmPassword, setconfirmPassword] = useState("");
 
-    const submitHandler = (e) =>{
+    const submitNewPerson = (e) =>{
         e.preventDefault(e);
 
         setPersonList([...personList,
@@ -28,7 +28,7 @@ const Person = (props) =>{
 
         <h1> Form Validations </h1>
 
-        <form onSubmit ={submitHandler}>
+        <form onSubmit ={submitNewPerson}>
             <div>
                 <p>{
                     firstName.length > 0 && firstName.length < 2 ?

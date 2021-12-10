@@ -17,11 +17,7 @@ const Form = (props) => {
             height : height,
         }
     ])
-    setColor("");
-    setWidth("");
-    setHeight("");
     }
-    
     
     return(
         <div>
@@ -60,7 +56,6 @@ const Form = (props) => {
                     </div>
                 ))
             }
-
         </div>
     )
 }

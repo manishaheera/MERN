@@ -4,8 +4,8 @@ const Form = (props) => {
 
     const [box, setBox] = useState([]);
     const[color, setColor] = useState("");
-    const [width, setWidth] = useState("");
     const [height, setHeight] = useState("");
+    const [width, setWidth] = useState("");
 
     const modifyBox = (e) => {
         e.preventDefault();
@@ -13,8 +13,8 @@ const Form = (props) => {
         setBox ([...box, 
         {
             color : color ,
-            width: width,
             height : height,
+            width: width,
         }
     ])
     }

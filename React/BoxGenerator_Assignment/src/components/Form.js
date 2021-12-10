@@ -3,28 +3,44 @@ import React, {useState} from "react";
 const Form = (props) => {
 
     const [box, setBox] = useState([]);
-    const[color, setColor] = useState('');
+    const[color, setColor] = useState("");
+    const [width, setWidth] = useState("");
+    const [height, setHeight] = useState("");
 
-    const changeBoxColor = (e) => {
+    const modifyBox = (e) => {
         e.preventDefault();
 
-        setBox ([...box, color ]);
+        setBox ([...box, 
+        {
+            color : color ,
+            width: width,
+            height : height,
+        }
+    ])
+    setColor("");
+    setWidth("");
+    setHeight("");
     }
     
     
-
-
     return(
         <div>
 
-            <form onSubmit= {changeBoxColor}> 
+            <form onSubmit= {modifyBox}> 
 
                 <div>
                     <h1> Create A Colored Box! </h1>
+
                     <label> Color </label>
                     <input type ="text" name="color" onChange={ (e) => setColor(e.target.value)}></input>
 
+                    <label> Height </label>
+                    <input type ="text" name="height" onChange={ (e) => setHeight(e.target.value)}></input>
+
+                    <label> Width </label>
+                    <input type ="text" name="width" onChange={ (e) => setWidth(e.target.value)}></input>
                 </div>
+
                 <button> Submit Color Box! </button>
 
             </form>
@@ -32,11 +48,11 @@ const Form = (props) => {
             <h1> Results </h1>
 
             {
-                box.map((color,index) => (
+                box.map((box,index) => (
                     <div key={index} style={{
-                        backgroundColor: color,
-                        height: "100px",
-                        width: "100px",
+                        backgroundColor: box.color,
+                        height: box.height+"px",
+                        width: box.width+"px",
                         display:"inline-flex",
                         marginTop: "10px",
                         marginRight:"10px",
@@ -50,4 +66,3 @@ const Form = (props) => {
 }
 
 export default Form;
-

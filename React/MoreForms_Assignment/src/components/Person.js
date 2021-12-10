@@ -69,8 +69,8 @@ const Person = (props) =>{
 
             <div>
                 <p>{
-                    password.length > 0 && password.length < 8 ?
-                    <span> password must be atleast 2 characters </span>
+                    password.length > 0 && password.length < 5 ?
+                    <span> password must be atleast 5 characters </span>
                     :null
                 }</p>
                 <label>Password: </label>
@@ -93,7 +93,7 @@ const Person = (props) =>{
         <h1 className="user-submission"> AFTER-SUBMISSION </h1>
         {
             personList.map((person,index)=>(
-                <div className="person">
+                <div key={index} className="person">
                     <p>Name: {person.firstName} {person.lastName}</p>
                     <p>Email: {person.email}</p>
                     <p>Password: {person.password}</p>

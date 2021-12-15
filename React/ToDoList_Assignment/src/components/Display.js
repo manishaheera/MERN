@@ -9,13 +9,16 @@ const Display = (props) => {
     }
 
     const checkboxHandler = (itemId) => {
-        toggle? 
-        setToggle(false)
-        : 
-        setToggle(true)
-        
-        
-    }
+        const newList = toDoList.map((item,index) => {
+            if (itemId === index) {
+                const newList = {...toDoList, 
+                    task : item.task,
+                    toggle: !item.toggle}
+                return newList
+            }
+        })
+        setToDoList(newList)
+        }
 
     return(
         <div>
@@ -34,7 +37,7 @@ const Display = (props) => {
                             }
                         </span>
 
-                        <input type="checkbox" value={item.toggle} onChange={(e)=>{checkboxHandler(index)}}/>
+                        <input type="checkbox" checked={item.toggle} onChange={(e)=>{checkboxHandler(index)}}/>
                         <button onClick={(e)=>deleteTask(index)}>Delete</button>
                         
                     </div>

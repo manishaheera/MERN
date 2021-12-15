@@ -8,22 +8,22 @@ const Display = (props) => {
         setToDoList(toDoList.filter((item, index) => index !== taskId))
     }
 
-    // const checkboxHandler = (itemId) => {
-    //     let newList = toDoList.map((item,index) => {
-    //         if (itemId === item.task) {
-    //             let newList = {...item}
-    //             newList.toggle = !item.toggle
-    //             return newList
-    //         }
-    //         return item 
-    //     })
-    //     setToDoList(newList)
-    //     }
-
     const checkboxHandler = (task) => {
-        task.toggle = !task.toggle
-        setToDoList([...toDoList])
+        let newList = toDoList.map((item,index) => {
+            if (task === item) {
+                let updatedItem = {...item};
+                updatedItem.toggle = !item.toggle
+                return updatedItem
+            }
+            return item 
+        })
+        setToDoList(newList)
         }
+
+    // const checkboxHandler = (task) => {
+    //     task.toggle = !task.toggle
+    //     setToDoList([...toDoList])
+    //     }
 
     return(
         <div>
@@ -36,9 +36,9 @@ const Display = (props) => {
 
                         <span>
                             { item.toggle? 
-                                (<p className="completedTask">  ({index}) {item.task} </p>) 
+                                (<p className="completedTask">  ({index + 1}) {item.task} </p>) 
                                 :
-                                (<p className="incompleteTask"> ({index})  {item.task} </p>)
+                                (<p className="incompleteTask"> ({index + 1})  {item.task} </p>)
                             }
                         </span>
 

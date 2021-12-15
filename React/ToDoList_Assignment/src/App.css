@@ -20,9 +20,12 @@ h1:hover{
 }
 
 label{
+  -webkit-text-stroke: .5px rgb(176, 176, 176);
   display:block;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight:bolder;
+  font-size: 20px;
 }
 
 button{

@@ -13,3 +13,16 @@ input{
   margin-right: 10px;
 }
 
+span{
+  font-weight: bolder;
+}
+
+.completedTask{
+  color: green;
+  text-decoration: line-through;
+}
+
+.incompleteTask{
+  color:red;
+}
+

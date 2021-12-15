@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Form
       toDoList = {toDoList} setToDoList = {setToDoList}
       task = {task} setTask ={setTask}
@@ -18,6 +19,7 @@ function App() {
       <Display
       toDoList = {toDoList} setToDoList = {setToDoList}
       />
+      
     </div>
   );
 }

@@ -11,17 +11,18 @@ const Form = (props) => {
             task: task,
         }
     ])
-
+    setTask("");
     }
 
     return(
         <div>
 
             <form onSubmit = {submitNewTask}>
-                <label>Add Task</label> 
-                <input type="text" name="task"  value={task} onChange={ (e) => setTask(e.target.value) } />
 
-                <input type="submit" value="Submit" />
+                <label>Add Task</label> 
+                <input type="text" name="task"  value={task} onChange={(e) => setTask(e.target.value)} />
+                <input type="submit" value="submit"/>
+
             </form>
 
         </div>

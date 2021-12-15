@@ -1,5 +1,3 @@
-import React, {useState} from 'react';
-
 const Display = (props) => {
 
     const {toDoList, setToDoList, toggle, setToggle} = props;
@@ -31,9 +29,9 @@ const Display = (props) => {
 
                         <span>
                             { item.toggle? 
-                                (<p className="completedTask">  {index + 1}: {item.task} </p>) 
+                                (<p className="completedTask">  ({index + 1}) {item.task} </p>) 
                                 :
-                                (<p className="incompleteTask"> {index + 1}:  {item.task} </p>)
+                                (<p className="incompleteTask"> ({index + 1})  {item.task} </p>)
                             }
                         </span>
 

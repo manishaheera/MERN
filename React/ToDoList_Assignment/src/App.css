@@ -2,27 +2,53 @@
   text-align: center;
 }
 
+h1{
+  font-size: 50px;
+  text-align: center;
+  background: -webkit-linear-gradient(#ffffff, rgb(80, 60, 63));
+  -webkit-text-stroke: 3px rgb(64, 64, 64);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 350ms;
+}
+
+h1:hover{
+  background: -webkit-linear-gradient(#ffffff, rgb(163, 2, 29));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0.25rem 0 0.55rem rgb(245, 245, 239));
+}
+
 label{
   display:block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+button{
+  padding:10px;
+  border: none;
+}
+
 input{
+  padding:5px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 span{
   font-weight: bolder;
+  font-size: 20px;
 }
 
 .completedTask{
-  color: green;
+  color: rgb(27, 127, 45);
   text-decoration: line-through;
+  -webkit-text-stroke: .5px rgb(0, 0, 0);
 }
 
 .incompleteTask{
-  color:red;
+  color:rgb(255, 0, 0);
+  -webkit-text-stroke: .5px rgb(0, 0, 0);
 }
 

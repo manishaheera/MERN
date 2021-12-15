@@ -1,6 +1,10 @@
-const Form = (props) => {
+import React, {useState} from 'react';
 
-    const {toDoList, setToDoList, task, setTask, toggle, setToggle} = props;
+const Form = (props) => {
+    const [task, setTask] = useState("");
+    // const [toggle, setToggle] = useState(false);
+
+    const {toDoList, setToDoList} = props;
 
     const submitNewTask = (e) => {
         e.preventDefault(e);
@@ -8,7 +12,7 @@ const Form = (props) => {
         setToDoList([...toDoList, 
         {
             task: task,
-            toggle: toggle, 
+            toggle: false, 
         }
     ])
     setTask("");

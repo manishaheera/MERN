@@ -1,13 +1,15 @@
 .App {
   text-align: center;
+  overflow: scroll;
+  padding:15px;
+  width:2000px;
+  height:500px;
+  background:linear-gradient( -80deg,#eee1ee 0%,#417fa3 0%, #f1eff2);
 }
 
-.App{
-    overflow: scroll;
-    padding:15px;
-    width:2000px;
-    height:500px;
-    background:linear-gradient( -80deg,#eee1ee 0%,#417fa3 0%, #f1eff2);
+h1{
+  color:white;
+  text-transform: uppercase;
 }
 
 .pokemon{

@@ -4,15 +4,22 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const[pokemon, setPokemon] = useState([]);
+
+  const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(()=>{
     axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
-      .then(res=>{setPokemon(res.data)})
-  });
 
+      .then((res) => {
+      setPokemonList(res.data.results);
+      console.log(res.data.results);
+      })
 
+      .catch((err) => {
+      console.log(err)
+      })
 
+    },[]);
 
 
   return (
@@ -21,7 +28,7 @@ function App() {
       <h1> List of 807 Pokemon </h1>
 
       {
-        pokemon.map((pokemon, index)=>{
+        pokemonList.map((pokemon, index)=>{
           return(
 
             <div key={index} className="pokemonContainer">

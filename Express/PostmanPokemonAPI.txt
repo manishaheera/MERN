@@ -1,0 +1,5 @@
+https://pokeapi.co/api/v2/pokemon/pikachu
+https://pokeapi.co/api/v2/pokemon/charizard
+https://pokeapi.co/api/v2/pokemon/jigglypuff
+https://pokeapi.co/api/v2/pokemon/eevee
+https://pokeapi.co/api/v2/pokemon/56

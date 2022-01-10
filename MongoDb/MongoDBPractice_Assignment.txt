@@ -29,12 +29,40 @@ Add a field named 'interests' to all student documents in the collection. The fi
 db.students.updateMany({},{$set: {interests: ['coding', 'brunch', 'MongoDB']}})
 
 Add some unique interests for each particular student into each of their interest arrays.
+db.students.update({name:'Preston Williams'}, {$push: {interests:'Golf'}})
+db.students.update({name:'Karmen Lynn'}, {$push: {interests:'Hiking'}})
+db.students.update({name:'Beverly Mavis'}, {$push: {interests:'Bingo'}})
 
-Add the interest 'taxes' into someone's interest array.
 
-Remove the 'taxes' interest you just added.
+Add the interest 'taxes' into someone's interest array. >>
+db.students.update({name:'Carly Adams'}, {$push: {interests:'Taxes'}})
 
-Remove all students who are from California.
+Remove the 'taxes' interest you just added. >>
+db.students.update({name:'Carly Adams'}, {$pull: {interests:'Taxes'}})
+
+Remove all students who are from California. >>
+db.students.remove({home_state:'California'})
+
+Remove a student by name. >>
+db.students.remove({name:'Carly Adams'})
+
+Remove a student whose lucky number is greater than 5 (JUST ONE) >>
+db.students.remove({lucky_number: {$gt: 5}}, true)
+
+Add a field to each student collection called 'number_of_belts' and set it to 0. >>
+db.students.updateMany({},{$set: {number_of_belts: 0}})
+
+Increment this field by 1 for all students in Washington (Seattle Dojo). >>
+db.students.updateMany({home_state: 'Washington'},{$inc: {number_of_belts: 1}})
+
+Rename the 'number_of_belts' field to 'belts_earned' >>
+db.students.updateMany({}, {$rename: {'number_of_belts': 'belts_earned'}})
+
+Remove the 'lucky_number' field. >>
+db.students.updateMany({},{$unset: {'lucky_number': ''}})
+
+Add a 'updated_on' field, and set the value as the current date. >>
+db.students.updateMany({}, {$set: {'last_updated': Date()}})
 
 
 

@@ -96,10 +96,6 @@ app.put("/api/jokes/:id", (req,res)=> {
     .catch((err)=> console.log(err))
 })
 
-
-
-
-
 const portNumber = 8000;
 
 //running server

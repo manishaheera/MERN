@@ -1,4 +1,4 @@
-const { request } = require("../models/joke.model");
+const Joke = require("../models/joke.model");
 
 module.exports = {
     

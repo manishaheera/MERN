@@ -8,16 +8,22 @@ module.exports = {
                     console.log(newProduct);
                     res.json(newProduct)
                 })
-                .catch((err)=> console.log(err))
+                .catch((err)=>{ 
+                    console.log("Create new product failed");
+                    res.json({message: "Error in createNewProduct", error: err})
+                })
     },
 
     findAllProducts: (req, res)=> {
         Product.find()
-            .then((allProducts) => {
+            .then((allProducts)=> {
                 console.log(allProducts);
                 res.json(allProducts)
             })
-            .catch((err)=> console.log(err))
+            .catch((err)=>{ 
+                console.log("Find all products failed");
+                res.json({message: "Error in findAllProducts", error: err})
+            })
     },
 
     findOneProduct: (req, res)=> {
@@ -26,7 +32,10 @@ module.exports = {
                 console.log(oneProduct);
                 res.json(oneProduct)
             })
-            .catch((err)=> console.log(err))
+            .catch((err)=>{ 
+                console.log("Find one product failed");
+                res.json({message: "Error in FindOneProduct", error: err})
+            })
     },
 
     deleteProduct: (req, res)=> {
@@ -35,7 +44,10 @@ module.exports = {
                 console.log(deletedProduct);
                 res.json(deletedProduct)
             })
-            .catch((err)=> console.log(err))
+            .catch((err)=>{ 
+                console.log("delete one product failed");
+                res.json({message: "Error in deleteProduct", error: err})
+            })
     },
 
     updateProduct: (req,res)=> {
@@ -44,11 +56,14 @@ module.exports = {
             req.body,
             {new: true, runValidators: true}
         )
-        .then((updatedProduct) => {
+        .then((updatedProduct)=> {
             console.log(updatedProduct);
             res.json(updatedProduct)
         })
-        .catch((err)=> console.log(err))
+        .catch((err)=>{ 
+            console.log("Update product failed");
+            res.json({message: "Error in updateProduct", error: err})
+        })
     }
 
 }

@@ -21,7 +21,7 @@ module.exports = {
                 res.json(allProducts)
             })
             .catch((err)=>{ 
-                console.log("Find all products failed.");
+                console.log("Find all products failed");
                 res.json({message: "Error in findAllProducts", error: err})
             })
     },

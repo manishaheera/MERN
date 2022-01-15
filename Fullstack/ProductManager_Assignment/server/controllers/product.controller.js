@@ -10,7 +10,7 @@ module.exports = {
                 })
                 .catch((err)=>{ 
                     console.log("Create new product failed");
-                    res.json({message: "Error in createNewProduct", error: err})
+                    res.status(400).json(err);
                 })
     },
 
@@ -61,8 +61,8 @@ module.exports = {
             res.json(updatedProduct)
         })
         .catch((err)=>{ 
-            console.log("Update product failed");
-            res.json({message: "Error in updateProduct", error: err})
+            console.log("Update one product failed");
+            res.status(400).json(err);
         })
     }
 

@@ -29,21 +29,22 @@ const CreateProduct = (props) => {
     }
 
     return (
-        <div>
+        <div id="wrapper">
+            
             <h1>Create Product</h1>
 
             <form onSubmit={submitProduct}>
 
                 <label> Product Title </label>
-                <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} />
+                <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} /> <br></br>
 
                 <label> Product Price </label>
-                <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} />
+                <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} /> <br></br>
 
                 <label> Product Description </label>
-                <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} />
+                <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} /> <br></br>
                 
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Submit" className="submitButton"/>
 
             </form>
 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"; 
 import axios from "axios";
+import {Link} from "@reach/router";
 
 const DisplayOneProduct = (props) => {
 
@@ -23,7 +24,8 @@ const DisplayOneProduct = (props) => {
                 <h1>Product</h1>
                 <span>Title:</span> {oneProduct.title} <br></br>
                 <span>Price:</span> {"$"+ oneProduct.price} <br></br>
-                <span>Description:</span> {oneProduct.description} <br></br>
+                <span>Description:</span> {oneProduct.description} <br></br><br></br>
+                <Link to={"/"}> ..Back to Product List </Link>
             </div>
         </div>
     )

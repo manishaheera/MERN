@@ -2,6 +2,7 @@ import "./App.css";
 import {Router} from "@reach/router";
 import Main from "./views/Main";
 import DisplayOneProduct from "./components/DisplayOneProduct";
+import UpdateProduct from "./components/UpdateProduct";
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
         <Main path ="/" />
 
         <DisplayOneProduct path ="/products/:id" />
+
+        <UpdateProduct path ="/products/edit/:id" />
 
       </Router>
 

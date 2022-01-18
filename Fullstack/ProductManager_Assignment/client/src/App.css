@@ -1,49 +1,49 @@
 
 *{
-  font-family:'Cutive Mono', monospace;
+  font-family: 'Cutive Mono', monospace;
   background-color: rgb(250, 250, 250);
 }
 
-.App {
+.App{
   text-align: center;
 }
 
-#wrapper{
-  margin-top: 2%;
+.wrapper{
+  margin-top: 1%;
   background-color: rgb(42, 42, 42);
   margin-left: 18%;
   text-align: center;
-  width:65%;
+  width: 65%;
   border: solid 1px rgb(244, 244, 244);
 }
 
 h1{
   background-color: rgb(42, 42, 42);
-  color:white;
+  color: white;
   padding: 10px;
 }
 
 form{
-  padding:10px;
+  padding: 10px;
   background-color: rgb(255, 255, 255);
 }
 
 label{
-  color:white;
+  color: white;
   border-radius: 25px;
   margin-bottom: 30px;
-  font-weight:bold;
-  display:inline-flex;
+  font-weight: bold;
+  display: inline-flex;
   margin-right: 20px;
   font-size: 13px;
-  padding:11px;
+  padding: 11px;
   opacity: .8;
   background: linear-gradient(transparent,rgb(132, 132, 132),rgb(18, 18, 18),rgb(61, 61, 61));
 }
 
 input{
   width: 50%;
-  padding:10px;
+  padding: 10px;
   margin-top: 20px;
   margin-bottom: 10px;
   border-color: rgb(222, 222, 222);
@@ -55,18 +55,26 @@ input:hover{
 
 .submitButton{
   background-color: rgb(244, 244, 244);
-  padding:10px;
-  border-style:none;
+  padding: 10px;
+  border-style: none;
   width: 80px;
 }
 
 .submitButton:hover{
-  color:white;
+  color: white;
   border-style: none;
   filter: drop-shadow(0.25rem 0 0.75rem rgb(215, 215, 215));
   background-color: rgb(68, 68, 68);
 }
 
+span{
+  font-weight: bolder;
+}
 
+.product{
+  margin-bottom: 1%;
+  font-size: larger;
+  border-bottom: solid 2px white;
+}
 
 

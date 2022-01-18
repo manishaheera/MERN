@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import axios from 'axios';
+import React, {useState} from "react";
+import axios from "axios";
 
 const CreateProduct = (props) => {
-
+    const {productList, setProductList} = props;
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -19,6 +19,7 @@ const CreateProduct = (props) => {
             .then((res)=> {
                 console.log(res);
                 console.log(res.data);
+                setProductList([...productList, res.data])
                 setTitle("");
                 setPrice("");
                 setDescription("");
@@ -29,9 +30,9 @@ const CreateProduct = (props) => {
     }
 
     return (
-        <div id="wrapper">
+        <div className ="wrapper">
             
-            <h1>Create Product</h1>
+            <h1>Product Manager -- Create Product</h1>
 
             <form onSubmit={submitProduct}>
 

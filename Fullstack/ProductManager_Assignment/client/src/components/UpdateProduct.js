@@ -62,6 +62,8 @@ const UpdateProduct = (props) => {
 
             </form>
 
+            <Link to={"/"} className="link"> Back to Product List </Link>
+
         </div>
     )
 }

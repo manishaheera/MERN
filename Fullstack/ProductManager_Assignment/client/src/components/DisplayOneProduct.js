@@ -41,7 +41,7 @@ const DisplayOneProduct = (props) => {
                 <button onClick={()=> navigate(`/products/edit/${oneProduct._id}`)}> Edit</button>
                 <button onClick={()=> deleteProduct(oneProduct._id)}> Delete</button> <br></br>
                 
-                <Link to={"/"}> Back to Product List </Link>
+                <Link to={"/"} className="link"> Back to Product List </Link>
             </div>
         </div>
     )

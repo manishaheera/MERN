@@ -36,7 +36,7 @@ const DisplayAllProducts = (props) => {
                 productList.map((product, index)=> (
                     <div key={product._id} className ="product">
         
-                        <span>Item {index + 1}: </span> <Link to={`/products/${product._id}`}> {product.title} </Link> <br></br>
+                        <span>Item {index + 1}: </span> <Link to={`/products/${product._id}`} className="link"> {product.title} </Link> <br></br>
                         <span>Price: </span> {"$"+ product.price} <br></br>
                         <span>Description: </span> {product.description} <br></br>
                     

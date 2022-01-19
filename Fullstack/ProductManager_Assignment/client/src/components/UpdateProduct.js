@@ -35,7 +35,7 @@ const UpdateProduct = (props) => {
             .then((res)=> {
                 console.log(res);
                 console.log(res.data);
-                navigate("/")
+                navigate(`/products/${id}`)
             })
             .catch((err)=> {
                 console.log(err);

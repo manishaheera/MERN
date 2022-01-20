@@ -4,7 +4,7 @@ import {Link, navigate} from "@reach/router";
 
 const DisplayOneProduct = (props) => {
 
-    const {id} = props;
+    const {id, success, setSuccess} = props;
     const [oneProduct, setOneProduct] = useState({});
 
 
@@ -32,7 +32,14 @@ const DisplayOneProduct = (props) => {
     return (
         <div className= "wrapper">
             <div className="product">
+
                 <h1>Product</h1>
+
+                {
+                success?
+                <h4>{success}</h4>
+                :null
+                }
 
                 <span>Title:</span> {oneProduct.title} <br></br>
                 <span>Price:</span> {"$"+ oneProduct.price} <br></br>
@@ -41,7 +48,7 @@ const DisplayOneProduct = (props) => {
                 <button onClick={()=> navigate(`/products/edit/${oneProduct._id}`)}> Edit</button>
                 <button onClick={()=> deleteProduct(oneProduct._id)}> Delete</button> <br></br>
                 
-                <Link to={"/"} className="link"> Back to Product List </Link>
+                <Link to={"/"} className="link" onClick={()=> setSuccess("")}> Back to Product List </Link>
             </div>
         </div>
     )

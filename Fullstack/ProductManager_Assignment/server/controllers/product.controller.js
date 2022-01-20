@@ -6,7 +6,7 @@ module.exports = {
         Product.create(req.body)
                 .then((newProduct)=>{
                     console.log(newProduct);
-                    res.json(newProduct)
+                    res.json({newProduct: newProduct, success: "product successfully created"})
                 })
                 .catch((err)=>{ 
                     console.log("Create new product failed");
@@ -58,7 +58,8 @@ module.exports = {
         )
         .then((updatedProduct)=> {
             console.log(updatedProduct);
-            res.json(updatedProduct)
+            //res.json(updatedProduct)
+            res.json({updatedProduct: updatedProduct, success: "product successfully updated"})
         })
         .catch((err)=>{ 
             console.log("Update one product failed");

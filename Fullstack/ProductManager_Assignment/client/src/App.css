@@ -98,6 +98,13 @@ button:hover{
 p{
   color: rgb(195, 7, 38);
   font-weight: bolder;
+  background-color: rgb(255, 255, 255);
+}
+
+h4{
+  font-weight: bolder;
+  color: rgb(42, 122, 42);
+  background-color: rgb(255, 255, 255);
 }
 
 

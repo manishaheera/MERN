@@ -7,6 +7,7 @@ const CreateProduct = (props) => {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [errors, setErrors] = useState("");
+    const [success, setSuccess] = useState("");
 
     const submitProduct = (e) => {
         e.preventDefault();
@@ -20,7 +21,9 @@ const CreateProduct = (props) => {
             .then((res)=> {
                 console.log(res);
                 console.log(res.data);
-                setProductList([...productList, res.data])
+                setProductList([...productList, res.data.newProduct])
+                // setSuccess("Product successfully added");
+                setSuccess(res.data.success);
                 setTitle("");
                 setPrice("");
                 setDescription("");
@@ -41,34 +44,40 @@ const CreateProduct = (props) => {
 
             <form onSubmit={submitProduct}>
 
-            {
-                errors.title?
-                <p>{errors.title.message}</p>
-                :null
-            }
+                {
+                    errors.title?
+                    <p>{errors.title.message}</p>
+                    :null
+                }
 
-            {
-                errors.price?
-                <p>{errors.price.message}</p>
-                :null
-            }
+                {
+                    errors.price?
+                    <p>{errors.price.message}</p>
+                    :null
+                }
 
-            {
-                errors.description?
-                <p>{errors.description.message}</p>
-                :null
-            }
+                {
+                    errors.description?
+                    <p>{errors.description.message}</p>
+                    :null
+                }
 
-                <label> Product Title </label>
-                <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} /> <br></br>
+                {
+                    success?
+                    <h4>{success}</h4>
+                    :null
+                }
 
-                <label> Product Price </label>
-                <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} /> <br></br>
+                    <label> Product Title </label>
+                    <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} onClick={()=> setSuccess("")} /> <br></br>
 
-                <label> Product Description </label>
-                <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} /> <br></br>
-                
-                <input type="submit" value="Submit" className="submitButton"/>
+                    <label> Product Price </label>
+                    <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} onClick={()=> setSuccess("")} /> <br></br>
+
+                    <label> Product Description </label>
+                    <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} onClick={()=> setSuccess("")} /> <br></br>
+                    
+                    <input type="submit" value="Submit" className="submitButton"/>
 
             </form>
 

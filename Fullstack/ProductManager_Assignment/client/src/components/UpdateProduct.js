@@ -4,7 +4,7 @@ import {Link, navigate} from "@reach/router";
 
 const UpdateProduct = (props) => {
 
-    const {id} = props;
+    const {id, setSuccess} = props;
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -36,6 +36,7 @@ const UpdateProduct = (props) => {
             .then((res)=> {
                 console.log(res);
                 console.log(res.data);
+                setSuccess(res.data.success);
                 navigate(`/products/${id}`)
             })
             .catch((err)=> {
@@ -52,34 +53,34 @@ const UpdateProduct = (props) => {
 
             <form onSubmit={updateProduct}>
 
-            {
-                errors.title?
-                <p>{errors.title.message}</p>
-                :null
-            }
+                {
+                    errors.title?
+                    <p>{errors.title.message}</p>
+                    :null
+                }
 
-            {
-                errors.price?
-                <p>{errors.price.message}</p>
-                :null
-            }
+                {
+                    errors.price?
+                    <p>{errors.price.message}</p>
+                    :null
+                }
 
-            {
-                errors.description?
-                <p>{errors.description.message}</p>
-                :null
-            }
+                {
+                    errors.description?
+                    <p>{errors.description.message}</p>
+                    :null
+                }
 
-                <label> Product Title </label>
-                <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} /> <br></br>
+                    <label> Product Title </label>
+                    <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)} /> <br></br>
 
-                <label> Product Price </label>
-                <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} /> <br></br>
+                    <label> Product Price </label>
+                    <input type="number" name="price" value={price} onChange={(e)=> setPrice(e.target.value)} /> <br></br>
 
-                <label> Product Description </label>
-                <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} /> <br></br>
-                
-                <input type="submit" value="Update" className="submitButton"/>
+                    <label> Product Description </label>
+                    <input type="text" name="description" value={description} onChange={(e)=> setDescription(e.target.value)} /> <br></br>
+                    
+                    <input type="submit" value="Update" className="submitButton"/>
 
             </form>
 

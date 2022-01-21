@@ -56,7 +56,7 @@ const DisplayAllAuthors = (props) => {
                         
                             <td>
                                 <button onClick={()=> navigate(`/authors/edit/${author._id}`)}> Edit </button>
-                                <button onClick={()=> deleteAuthor(author._id)} > Delete</button>
+                                <button onClick={()=> deleteAuthor(author._id)} > Delete </button>
                             </td>
 
                         </tr>

@@ -40,9 +40,9 @@ const CreateAuthors = (props) => {
             <form onSubmit={submitAuthor}>
 
                 {
-                        errors.name?
-                        <p>{errors.name.message}</p>
-                        :null
+                    errors.name?
+                    <p>{errors.name.message}</p>
+                    :null
                 }
 
                 <label> Author Name </label>

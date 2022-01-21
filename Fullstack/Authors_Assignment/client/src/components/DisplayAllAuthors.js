@@ -30,7 +30,7 @@ const DisplayAllAuthors = (props) => {
     return(
         <div className="wrapper">
 
-            <h1> Favorite Authors &hearts;</h1>
+            <h1> Favorite Authors &hearts; </h1>
 
             <Link to={"/authors/new"} className="addNew"> Add Author </Link>
             

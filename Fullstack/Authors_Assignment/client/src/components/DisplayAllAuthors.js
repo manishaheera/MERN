@@ -17,12 +17,12 @@ const DisplayAllAuthors = (props) => {
 
     }, [])
 
-    const deleteAuthor = (id)=> {
-        axios.delete(`http://localhost:8000/api/authors/${id}`)
+    const deleteAuthor = (mapId)=> {
+        axios.delete(`http://localhost:8000/api/authors/${mapId}`)
         .then((res)=> { 
             console.log(res);
             console.log(res.data);
-            setAuthorList(authorList.filter((author, index)=>author._id !== id))
+            setAuthorList(authorList.filter((author, index)=>author._id !== mapId))
         })
         .catch((err)=> console.log(err))
     }
@@ -30,23 +30,43 @@ const DisplayAllAuthors = (props) => {
     return(
         <div className="wrapper">
 
-            <h1> Favorite Authors </h1>
+            <h1> Favorite Authors &hearts;</h1>
 
             <Link to={"/authors/new"} className="addNew"> Add Author </Link>
             
+            <table>
 
-                {
-                authorList.map((author, index)=> (
-                    <div key={author._id} className ="author">
+                <thead>
+                    <tr>
+                        <th> Author Name</th>
+                        <th> Actions </th>
+                    </tr>
+                </thead>
 
-                        <span>{index + 1}: </span> <Link to={`/authors/${author._id}`} className="link"> {author.name} </Link> <br></br>
-                    
-                        <button onClick={()=> navigate(`/authors/edit/${author._id}`)}> Edit </button>
-                        <button onClick={()=> deleteAuthor(author._id)} > Delete</button>
-                    </div>
-                ))
-                }
-                
+                <tbody>
+
+                    {
+                    authorList.map((author, index)=> (
+                        <tr key={author._id} className ="author">
+
+                            <td>
+                                <span>{index + 1}:</span> 
+                                {author.name} 
+                            </td>
+                        
+                            <td>
+                                <button onClick={()=> navigate(`/authors/edit/${author._id}`)}> Edit </button>
+                                <button onClick={()=> deleteAuthor(author._id)} > Delete</button>
+                            </td>
+
+                        </tr>
+                    ))
+                    }
+
+                </tbody>
+
+            </table>
+
         </div>
     )
 }

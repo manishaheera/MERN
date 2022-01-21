@@ -54,10 +54,10 @@ const EditAuthor = (props) =>{
                     <input type="text" name="name" value={name} onChange={(e)=> setName(e.target.value)} /> <br></br>
 
                     <input type="submit" value="Update" className="submitButton"/>
+                    <button onClick={()=> navigate("/")} className="submitButton"> Cancel </button>
 
             </form>
-
-            <Link to={"/"} className="link"> Back to Authors List </Link>
+            <Link to={"/"} className="home"> Home </Link>
         </div>
     )
 }

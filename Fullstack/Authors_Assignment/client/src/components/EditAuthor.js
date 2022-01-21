@@ -20,7 +20,7 @@ const EditAuthor = (props) =>{
             console.log(err);
             navigate("/authors/error")
         })
-    }, [])
+    }, [id])
 
     const updateAuthor = (e) => {
         e.preventDefault();

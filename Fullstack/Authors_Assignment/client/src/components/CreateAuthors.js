@@ -5,7 +5,7 @@ import {Link, navigate} from "@reach/router";
 const CreateAuthors = (props) => {
 
 
-    const [authorList, setAuthorList] = useState([]);
+    // const [authorList, setAuthorList] = useState([]); // don't need state since the authorlist is not being displayed on this component! not lifted state
     const [name, setName] = useState(""); 
     const [errors, setErrors] = useState("");
 
@@ -19,7 +19,7 @@ const CreateAuthors = (props) => {
             .then((res)=> {
                 console.log(res);
                 console.log(res.data);
-                setAuthorList([...authorList, res.data])
+                // setAuthorList([...authorList, res.data])
                 setName("");
                 setErrors("");
                 navigate("/")

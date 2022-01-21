@@ -3,7 +3,9 @@ import './App.css';
 import {Router} from "@reach/router";
 import DisplayAllAuthors from './components/DisplayAllAuthors';
 import CreateAuthors from './components/CreateAuthors';
+import ReRoute from './components/ReRoute';
 import EditAuthor from './components/EditAuthor';
+
 
 function App() {
 
@@ -17,6 +19,9 @@ function App() {
         />
 
         <CreateAuthors path="/authors/new" 
+        />
+
+        <ReRoute path="/authors/error" 
         />
 
         <EditAuthor path="/authors/edit/:id" 

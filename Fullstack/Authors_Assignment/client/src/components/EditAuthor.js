@@ -16,8 +16,11 @@ const EditAuthor = (props) =>{
             console.log(res.data);
             setName(res.data.name);
         })
-        .catch((err) => console.log(err))
-    }, [id])
+        .catch((err) => {
+            console.log(err);
+            navigate("/authors/error")
+        })
+    }, [])
 
     const updateAuthor = (e) => {
         e.preventDefault();

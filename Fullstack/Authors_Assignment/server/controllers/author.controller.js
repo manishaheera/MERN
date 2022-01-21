@@ -15,7 +15,7 @@ module.exports = {
     },
 
     findAllAuthors: (req, res)=> {
-        Author.find()
+        Author.find({}).collation({locale:'en', strength:2}).sort({name:1})
             .then((allAuthors)=> {
                 console.log(allAuthors);
                 res.json(allAuthors)

@@ -5,8 +5,10 @@ import {Link, navigate} from "@reach/router";
 const EditAuthor = (props) =>{
 
     const {id} = props;
+
+
     const [name, setName] = useState("");
-    const [errors, setErrors] = useState("");
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors/${id}`)
@@ -16,6 +18,7 @@ const EditAuthor = (props) =>{
             setName(res.data.name);
         })
         .catch((err) => {
+            console.log("catch")
             console.log(err);
             navigate('/error');
         })
@@ -53,9 +56,9 @@ const EditAuthor = (props) =>{
                 }
 
                     <label> Author Name </label>
-                    <input type="text" name="name" value={name} onChange={(e)=> setName(e.target.value)} /> <br></br>
+                    <input type="text" name="name" value={name} onChange={(e)=> setName(e.target.value)} /> 
 
-                    <input type="submit" value="Update" className="submitButton"/>
+                    <input type="submit" value="Update" className="submitButton"/> 
                     <button onClick={()=> navigate("/")} className="submitButton"> Cancel </button>
 
             </form>

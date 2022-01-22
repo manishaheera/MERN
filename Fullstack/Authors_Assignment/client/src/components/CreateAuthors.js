@@ -14,7 +14,7 @@ const CreateAuthors = (props) => {
 
         axios
             .post("http://localhost:8000/api/authors", {
-                name,
+                name
             })
             .then((res)=> {
                 console.log(res);

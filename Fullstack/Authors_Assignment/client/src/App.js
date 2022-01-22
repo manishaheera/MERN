@@ -15,17 +15,13 @@ function App() {
     <div className="App">
       <Router>
 
-        <DisplayAllAuthors path="/"
-        />
+        <DisplayAllAuthors path="/"/>
 
-        <CreateAuthors path="/authors/new" 
-        />
+        <CreateAuthors path="/new"/>
 
-        <ReRoute path="/authors/error" 
-        />
+        <ReRoute path="/error" />
 
-        <EditAuthor path="/authors/edit/:id" 
-        />
+        <EditAuthor path="/edit/:id" />
 
       </Router>
 

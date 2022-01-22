@@ -32,7 +32,7 @@ const DisplayAllAuthors = (props) => {
 
             <h1> Favorite Authors &hearts; </h1>
 
-            <Link to={"/authors/new"} className="addNew"> Add Author </Link>
+            <Link to={"/new"} className="addNew"> Add Author </Link>
             
             <table>
 
@@ -55,7 +55,7 @@ const DisplayAllAuthors = (props) => {
                             </td>
                         
                             <td>
-                                <button onClick={()=> navigate(`/authors/edit/${author._id}`)}> Edit </button>
+                                <button onClick={()=> navigate(`/edit/${author._id}`)}> Edit </button>
                                 <button onClick={()=> deleteAuthor(author._id)} > Delete </button>
                             </td>
 

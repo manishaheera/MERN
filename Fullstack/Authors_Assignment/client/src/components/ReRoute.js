@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import {Link, navigate} from "@reach/router";
 
 const ReRoute = (props) => {
@@ -11,7 +12,7 @@ const ReRoute = (props) => {
         <Link to={"/"} className="addNew"> Home </Link>
 
         <p> The author you're looking for does not exist. If you would like to add an author please use the create author form:
-            <Link to={"/authors/new"}>  Create Author  </Link>
+            <Link to={"/new"}>  Create Author  </Link>
         </p>
 
         </div>

@@ -5,20 +5,19 @@ import {Link, navigate} from "@reach/router";
 const EditAuthor = (props) =>{
 
     const {id} = props;
-
     const [name, setName] = useState("");
     const [errors, setErrors] = useState("");
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors/${id}`)
-        .then((res) =>{
+        .then((res) => {
             console.log(res);
             console.log(res.data);
             setName(res.data.name);
         })
         .catch((err) => {
             console.log(err);
-            navigate("/authors/error")
+            navigate('/error');
         })
     }, [id])
 

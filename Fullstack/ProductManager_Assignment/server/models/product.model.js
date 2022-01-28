@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const uniqueValidator = require('mongoose-unique-validator');
 
 
 const ProductSchema = new mongoose.Schema ({
@@ -6,7 +7,8 @@ const ProductSchema = new mongoose.Schema ({
     title: {
         type: String,
         required: [true, "Product title is required!" ],
-        minlength: [3, "Product title must be at least 3 characters."]
+        minlength: [3, "Product title must be at least 3 characters."],
+        unique: true,
     },
 
     price: {
@@ -24,6 +26,7 @@ const ProductSchema = new mongoose.Schema ({
 
 
 const Product = mongoose.model("Product", ProductSchema);
+ProductSchema.plugin(uniqueValidator, {message: 'Product name must be unique'});
 
 
 module.exports = Product;

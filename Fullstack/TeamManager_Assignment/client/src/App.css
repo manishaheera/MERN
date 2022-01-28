@@ -1,38 +1,65 @@
-.App {
+
+
+.wrapper{
   text-align: center;
+  background-color: rgb(230, 230, 230);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+  padding: 10px;
+  text-align: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.player-box{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border: solid 3px black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+table{
+  padding: 10px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+th{
+  border-radius: 25px;
+  padding: 10px;
+  background-color: rgb(53, 52, 52);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+td{
+  background-color: rgb(237, 237, 237);
+  border: solid 1px black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  border: solid 2px rgb(0, 0, 0) ;
+  color:white;
+  padding: 5px;
+  background-color: rgb(115, 106, 106);
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+h2{
+  padding: 10px;
+  text-align: start;
+}
+
+input{ 
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  padding: 5px;
+}
+
+input:hover{
+  background-color: rgb(243, 243, 243);
 }

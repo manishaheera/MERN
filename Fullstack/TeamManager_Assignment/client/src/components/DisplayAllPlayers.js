@@ -1,10 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link, navigate} from "@reach/router";
+import NavOne from './NavOne';
 
 const DisplayAllPlayers = (props) => {
 
     const [playerList, setPlayerList] = useState([]);
+    const {listPageIsActive,setListPageIsActive,setManagePlayerStatusTabIsActive,} = props;
+
+    useEffect(() => {
+        setListPageIsActive(true);
+        setManagePlayerStatusTabIsActive(false);
+    });
 
     useEffect(()=> {
         axios.get("http://localhost:8000/api/players")
@@ -28,18 +35,16 @@ const DisplayAllPlayers = (props) => {
     }
 
     return(
-        <div className="wrapper">
 
-            <header>
-                <Link to={"/players/list"} className="addNew"> Manage Players </Link> |
-                <Link to={"/status/game/1"} className="addNew"> Manage Player Status </Link>
-            </header>
+        <div className="wrapper">
 
             <div className="player-box">
 
-                <Link to={"/players/addplayer"} className="addNew"> List </Link> |
-                <Link to={"/players/addplayer"} className="addNew"> Add Player </Link>
-                
+            <NavOne
+                listPageIsActive={listPageIsActive}
+                setListPageIsActive={setListPageIsActive}
+            />
+
                 <table>
 
                     <thead>

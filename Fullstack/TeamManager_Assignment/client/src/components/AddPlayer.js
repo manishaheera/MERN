@@ -1,12 +1,19 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {Link, navigate} from "@reach/router";
+import NavOne from "./NavOne";
 
 const AddPlayer = (props) => {
 
     const [name, setName] = useState(""); 
     const [preferredPosition, setPreferredPosition] = useState(""); 
     const [errors, setErrors] = useState("");
+    const {listPageIsActive,setListPageIsActive,setManagePlayerStatusTabIsActive,} = props;
+
+        useEffect(() => {
+            setListPageIsActive(false);
+            setManagePlayerStatusTabIsActive(false);
+        });
 
     const submitPlayer= (e) => {
         e.preventDefault();
@@ -33,10 +40,15 @@ const AddPlayer = (props) => {
 
 
     return(
+
         <div className="wrapper">
-
-
+        
             <div className="player-box">
+
+                <NavOne
+                    listPageIsActive={listPageIsActive}
+                    setListPageIsActive={setListPageIsActive}
+                />
 
                 <h2> Add Player </h2>
 
@@ -51,10 +63,10 @@ const AddPlayer = (props) => {
                     <label> Player Name: </label>
                     <input type="text" name="name" value={name} onChange={(e)=> setName(e.target.value)} /> <br></br>
 
-                    <label> Preffered Position: </label>
+                    <label> Preferred Position: </label>
                     <input type="text" name="name" value={preferredPosition} onChange={(e)=> setPreferredPosition(e.target.value)} /> <br></br>
 
-                    <button onClick={()=> navigate("/")}> Add </button>
+                    <button> Add </button>
                     
                 </form>
 

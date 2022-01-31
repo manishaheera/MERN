@@ -20,7 +20,28 @@ class Ninja {
     }
 }
 
+// Sensei class should extend Ninja class, A Sensei should have 200 health, 10 speed, and 10 strength by default 
+// Sensei should have new wisdom attribute with default of 10.
+// SpeakWisdom should call the drinkSake method from Ninja class before console.logging a wise message 
+
+class Sensei extends Ninja {
+    constructor(name, health = 200 , speed = 10, strength = 10, wisdom = 10){
+        super(name, health, speed, strength)
+        this.wisdom = wisdom
+    }
+
+    speakWisdom(){
+        this.drinkSake();
+        console.log("wise message")
+    }
+
+}
+
 const ninjaOne = new Ninja("Manisha", 100);
 ninjaOne.SayName();
 ninjaOne.ShowStats();
 ninjaOne.drinkSake();
+
+const senseiOne = new Sensei("Manisha");
+senseiOne.ShowStats();
+senseiOne.speakWisdom();

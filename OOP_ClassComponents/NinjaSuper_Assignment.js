@@ -18,6 +18,7 @@ class Ninja {
         this.health = this.health + 10;
         console.log(this.name + " drank sake and his/her health level is now " + this.health +" woo!!");
     }
+
 }
 
 // Sensei class should extend Ninja class, A Sensei should have 200 health, 10 speed, and 10 strength by default 
@@ -25,7 +26,7 @@ class Ninja {
 // SpeakWisdom should call the drinkSake method from Ninja class before console.logging a wise message 
 
 class Sensei extends Ninja {
-    constructor(name, health = 200 , speed = 10, strength = 10, wisdom = 10){
+    constructor(name, health = 200 , speed = 10, strength = 10, wisdom = 10){ // adding NEW default values & NEW wisdom attribute in constructor
         super(name, health, speed, strength)
         this.wisdom = wisdom
     }

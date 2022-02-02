@@ -17,8 +17,8 @@ class PersonCard extends Component {
         return(
             <div>
                 <h3> {lastName}, {firstName} </h3>
-                <p> {this.state.increaseAge} </p>
-                <p> {hairColor} </p>
+                <p> Age: {this.state.increaseAge} </p>
+                <p> Hair Color:  {hairColor} </p>
                 <button onClick={() => this.setState({ increaseAge: this.state.increaseAge + 1})}> Birthday Button</button>
             </div>
         )

@@ -8,28 +8,28 @@ function App() {
       <PersonCard
       lastName={'James'}
       firstName={'Karl'}
-      age={'32'}
+      age={27}
       hairColor={'Black'}
       />
 
       <PersonCard
       lastName={'Smith'}
       firstName={'John'}
-      age={'33'}
+      age={33}
       hairColor={'Brown'}
       />
 
       <PersonCard
       lastName={'Smith'}
       firstName={'Maria'}
-      age={'45'}
+      age={40}
       hairColor={'Black'}
       />
 
       <PersonCard
       lastName={'Doe'}
       firstName={'Jane'}
-      age={'55'}
+      age={32}
       hairColor={'Brown'}
       />  
       

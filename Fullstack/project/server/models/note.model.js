@@ -5,14 +5,12 @@ const NoteSchema = new mongoose.Schema ({
 
     title: {
         type: String,
-        required: [true, "title is required!" ],
-        minlength: [1, "title must be at least 1 character."]
+        required: [true, "Title is required!" ],
     },
 
     content: {
         type: String,
-        required: [true, "note cannot be empty!" ],
-        minlength: [1, "note must be at least 1 character."]
+        required: [true, "Note cannot be empty!" ],
     },
 
 }, {timestamps: true}) 

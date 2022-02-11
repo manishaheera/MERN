@@ -2,6 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 
@@ -12,6 +13,9 @@ app.use(express.urlencoded({ extended:true }));
 app.use(cors({
     origin:"http://localhost:3000"
 }))
+
+//configures server to accept and update cookies
+app.use(cookieParser());
 
 
 require("./config/mongoose.config"); 

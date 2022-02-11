@@ -13,6 +13,11 @@ const NoteSchema = new mongoose.Schema ({
         required: [true, "Note cannot be empty!" ],
     },
 
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
+
 }, {timestamps: true}) 
 
 

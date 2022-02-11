@@ -1,9 +1,22 @@
 const Note = require("../models/note.model");
+const jwt = require("jsonwebtoken");
+const User = require("../models/user.model");
 
 module.exports = {
     
     createNewNote: (req, res)=> {
-        Note.create(req.body)
+        const newNoteObject = new Note(req.body);
+
+        // const decodedJWT = jwt.decode(req.cookies.usertoken, {
+        //     complete: true,
+        // })
+
+        // newNoteObject.createdBy = decodedJWT.payload.id
+
+
+        newNoteObject.createdBy = req.jwtpayload.id
+
+        newNoteObject.save()
                 .then((newNote)=>{
                     console.log(newNote);
                     res.json(newNote)
@@ -16,6 +29,7 @@ module.exports = {
 
     findAllNotes: (req, res)=> {
         Note.find({}).collation({locale:'en', strength:2}).sort({name:1})
+            .populate("createdBy", "username email")
             .then((allNotes)=> {
                 console.log(allNotes);
                 res.json(allNotes)
@@ -64,6 +78,38 @@ module.exports = {
             console.log("Update note failed");
             res.status(400).json(err);
         })
+    },
+
+    findAllNotesByUser: (req, res) => {
+        if(req.jwtpayload.username !== req.params.username){
+            User.findOne({username: req.params.username})
+                .then((userNotLoggedIn) => {
+                    Note.find({createdBy:userNotLoggedIn._id})
+                        .then((allNotesByUser) => {
+                            console.log(allNotesByUser);
+                            res.json(allNotesByUser)
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                            res.status(400).json(err);
+                        })
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.status(400).json(err);
+                })
+        }
+        else{
+            Note.find({createdBy: req.jwtpayload.id})
+                .then((allNotesByLoggedInUser) => {
+                    console.log(allNotesByLoggedInUser);
+                    res.json(allNotesByLoggedInUser)
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.status(400).json(err);
+                })
+        }
     }
 
 }

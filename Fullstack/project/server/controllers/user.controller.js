@@ -79,17 +79,37 @@ module.exports = {
             })
     },
 
-    getUser: (req,res) => {
-        User.findOne({ _id: req.params.id })
-            .then((oneUser) => {
-                console.log(oneUser);
-                res.json(oneUser);
+    getAllUsers: (req, res)=> {
+        User.find({}).collation({locale:'en', strength:2}).sort({name:1})
+            .then((allUsers)=> {
+                console.log(allUsers);
+                res.json(allUsers)
             })
-            .catch((err)=> {
-                console.log(err);
-                res.status(400).json(err);
+            .catch((err)=>{ 
+                console.log("Find all users failed");
+                res.json({message: "Error in getAllUsers", error: err})
             })
     },
+
+    // OK TO USE BUT BETTER/SAFER PRACTICE BELOW
+    // getUser: (req,res) => {
+    //     User.findOne({ _id: req.params.id })
+    //         .then((oneUser) => {
+    //             console.log(oneUser);
+    //             res.json(oneUser);
+    //         })
+    //         .catch((err)=> {
+    //             console.log(err);
+    //             res.status(400).json(err);
+    //         })
+    // },
+
+    getLoggedInUser: (req, res) => {
+        User.findOne({_id: req.jwtpayload.id})
+            .then(user => res.json(user))
+            .catch(err => res.json(err))
+    },
+
 
     logout: (req, res) => {
         console.log("logging out");

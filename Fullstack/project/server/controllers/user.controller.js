@@ -19,7 +19,7 @@ module.exports = {
                 });
             })
             .catch((err) => {
-                console.log("Register not successful")
+                console.log("Registration not successful")
                 res.status(400).json(err);
             })
     },

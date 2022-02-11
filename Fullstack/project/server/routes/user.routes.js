@@ -10,4 +10,9 @@ module.exports = (app) => {
     app.get("/api/users", UserController.getAllUsers);
     app.get("/api/users/secure", authenticate, UserController.getLoggedInUser);
 
+
+    // delete afterwards
+    
+    app.delete("/api/users/:id", UserController.deleteUser);
+
 }

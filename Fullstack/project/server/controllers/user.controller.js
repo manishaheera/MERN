@@ -119,5 +119,17 @@ module.exports = {
         })
     },
 
+    deleteUser: (req, res)=> {
+        User.deleteOne({_id: req.params.id})
+            .then((deletedUser)=> {
+                console.log(deletedUser);
+                res.json(deletedUser)
+            })
+            .catch((err)=>{ 
+                console.log("delete user failed");
+                res.json({message: "Error in deleteuser", error: err})
+            })
+    },
+
 
 }

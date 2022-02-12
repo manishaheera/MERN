@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+// import ReactBubblyEffectButton from "react-bubbly-effect-button";
+
 
 const Registration = (props) => {
 
@@ -48,10 +50,14 @@ const Registration = (props) => {
         })
     }
 
+    // const onClick = () => {
+    //     console.log('Clicked')
+    //   }
+
     return(
         <div className="register">
 
-            <h2> Register </h2>
+            <h2> Register &hearts; </h2>
 
             {
                 confirmReg?
@@ -105,7 +111,7 @@ const Registration = (props) => {
                     <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
                 </div>
 
-                <button> Register </button>
+                {/* <ReactBubblyEffectButton onClick={onClick}> Register </ReactBubblyEffectButton> */}
 
 
             </form>

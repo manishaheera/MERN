@@ -3,7 +3,6 @@ import Login from "../components/Login";
 import Registration from "../components/Registration";
 import Typewriter from "typewriter-effect";
 import Particles from "react-tsparticles";
-import { redirectTo } from "@reach/router";
 
 const LoginRegistration = (props) => {
 
@@ -17,6 +16,7 @@ const LoginRegistration = (props) => {
 
     return(
         <div>
+        
 
             <Particles
                 id="tsparticles"
@@ -28,7 +28,7 @@ const LoginRegistration = (props) => {
                     //     value: "#0d47a1",
                     // },
                     // },
-                    fpsLimit: 400,
+                    fpsLimit: 200,
                     interactivity: {
                     events: {
                         onClick: {
@@ -44,7 +44,7 @@ const LoginRegistration = (props) => {
                     modes: {
                         bubble: {
                         distance: 400,
-                        duration: 2,
+                        duration: 0.2,
                         opacity: 0.5,
                         size: 40,
                         },
@@ -53,7 +53,7 @@ const LoginRegistration = (props) => {
                         },
                         repulse: {
                         distance: 100,
-                        duration: 0.4,
+                        duration: 0.2,
                         },
                     },
                     },
@@ -65,7 +65,7 @@ const LoginRegistration = (props) => {
                         color: "ffffff",
                         distance: 150,
                         enable: true,
-                        opacity: 0.5,
+                        opacity: 0.2,
                         width: 1,
                     },
                     collisions: {
@@ -76,7 +76,7 @@ const LoginRegistration = (props) => {
                         enable: true,
                         outMode: "bounce",
                         random: false,
-                        speed: 2,
+                        speed: 0.2,
                         straight: false,
                     },
                     number: {
@@ -90,11 +90,15 @@ const LoginRegistration = (props) => {
                         value: 0.5,
                     },
                     shape: {
-                        type: "circle",
+                        // type: "circle",
+                        type: "image",
+                        "image": {
+                            "src": "https://cdn.clipartsfree.net/vector/medium/54438-white-heart-outline-thick-images.png"
+                        }
                     },
                     size: {
                         random: true,
-                        value: 5,
+                        value: 10,
                     },
                     },
                     detectRetina: true,
@@ -102,17 +106,25 @@ const LoginRegistration = (props) => {
                 />
 
             <h1>
+
                 <Typewriter
                     onInit={(typewriter) => {
                         typewriter.typeString("Compose").start();
                 }}/>
             </h1>
+
+
             
             <div className="background">
+
+            <img src={require('../images/bears.png')} className="bears" />
+
                 <div className="login-reg-box">
                     <Registration/>
                     <Login />
                 </div>
+
+                <footer> © 2022 Compose | Seattle, Washington | All Rights Reserved. </footer>
             </div>
 
         </div>

@@ -40,7 +40,7 @@ const Login = (props) => {
 
     return(
         <div className ="login">
-            <h2> Login </h2>
+            <h2> Login &hearts; </h2>
 
             {
                 errors.email? 

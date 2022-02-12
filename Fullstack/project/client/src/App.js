@@ -4,8 +4,10 @@ import Dashboard from './components/Dashboard';
 import {Router} from '@reach/router';
 
 function App() {
+
   return (
     <div className="App">
+
       <Router>
 
         <LoginRegistration path="/"/>

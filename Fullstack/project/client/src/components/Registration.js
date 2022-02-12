@@ -49,7 +49,7 @@ const Registration = (props) => {
     }
 
     return(
-        <div>
+        <div className="register">
 
             <h2> Register </h2>
 
@@ -85,22 +85,22 @@ const Registration = (props) => {
             
             <form onSubmit={register}>
 
-                <div>
+                <div className="form-field">
                     <label> Username </label>
                     <input type="text" name="username" value={user.username} onChange={(e) => handleChange(e)} />
                 </div>
 
-                <div>
+                <div className="form-field">
                     <label> Email </label>
                     <input type="email" name="email" value={user.email} onChange={handleChange} />
                 </div>
 
-                <div>
+                <div className="form-field">
                     <label> Password </label>
                     <input type="password" name="password" value={user.password} onChange={handleChange} />
                 </div>
 
-                <div>
+                <div className="form-field">
                     <label> Confirm Password </label>
                     <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
                 </div>

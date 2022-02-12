@@ -34,22 +34,34 @@ const Login = (props) => {
         })
         .catch((err) => {
             console.log(err);
-            setErrors(err.response.data.message)
+            setErrors(err.response.data.message);
         })
     }
 
     return(
-        <div>
+        <div className ="login">
             <h2> Login </h2>
+
+            {
+                errors.email? 
+                    <p>{errors.email.message}</p>
+                :null
+            }
+
+            {
+                errors.password? 
+                    <p>{errors.password.message}</p>
+                :null
+            }
 
             <form onSubmit={login}>
 
-                <div>
+                <div className="form-field">
                     <label> Email </label>
                     <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
-                <div>
+                <div className="form-field">
                     <label> Password </label>
                     <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>

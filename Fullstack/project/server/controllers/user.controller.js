@@ -28,7 +28,7 @@ module.exports = {
         User.findOne({email: req.body.email})
             .then((userRecord) => {
                 if(userRecord === null) { // if email is not in database 
-                    res.status(400).json({message: "Invalid Login Attempt!"})
+                    res.status(400).json({message: "Invalid Login Attempt"})
                 }
                 else{ //email found
                     // does the password submitted match the password for the user on record? bcrpt compare to compare HASHED passwords
@@ -79,13 +79,13 @@ module.exports = {
             })
     },
 
-    getAllUsers: (req, res)=> {
+    getAllUsers: (req, res) => {
         User.find({}).collation({locale:'en', strength:2}).sort({name:1})
-            .then((allUsers)=> {
+            .then((allUsers) => {
                 console.log(allUsers);
                 res.json(allUsers)
             })
-            .catch((err)=>{ 
+            .catch((err) => { 
                 console.log("Find all users failed");
                 res.json({message: "Error in getAllUsers", error: err})
             })
@@ -119,13 +119,13 @@ module.exports = {
         })
     },
 
-    deleteUser: (req, res)=> {
+    deleteUser: (req, res) => {
         User.deleteOne({_id: req.params.id})
-            .then((deletedUser)=> {
+            .then((deletedUser) => {
                 console.log(deletedUser);
                 res.json(deletedUser)
             })
-            .catch((err)=>{ 
+            .catch((err) =>{ 
                 console.log("delete user failed");
                 res.json({message: "Error in deleteuser", error: err})
             })

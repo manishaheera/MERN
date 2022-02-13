@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-// import ReactBubblyEffectButton from "react-bubbly-effect-button";
 
 
 const Registration = (props) => {
@@ -50,12 +49,9 @@ const Registration = (props) => {
         })
     }
 
-    // const onClick = () => {
-    //     console.log('Clicked')
-    //   }
-
     return(
         <div className="register">
+
 
             <h2> Register &hearts; </h2>
 
@@ -93,28 +89,35 @@ const Registration = (props) => {
 
                 <div className="form-field">
                     <label> Username </label>
-                    <input type="text" name="username" value={user.username} onChange={(e) => handleChange(e)} />
+                    <input type="text" name="username" required="required" value={user.username} onChange={(e) => handleChange(e)} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Email </label>
-                    <input type="email" name="email" value={user.email} onChange={handleChange} />
+                    <input type="email" name="email" required="required" value={user.email} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Password </label>
-                    <input type="password" name="password" value={user.password} onChange={handleChange} />
+                    <input type="password" name="password" required="required" value={user.password} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Confirm Password </label>
-                    <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
+                    <input type="password" name="confirmPassword" required="required" value={user.confirmPassword} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
-                {/* <ReactBubblyEffectButton onClick={onClick}> Register </ReactBubblyEffectButton> */}
+                <div className="form-field">
+                    <input type="checkbox" required="required" />
+                    <label className="terms-policy"> 
+                        I  agree with the <terms> Terms & Conditions</terms> and <terms> Privacy Policy </terms>
+                    </label>
+                </div>
 
+                <button className="register-button"> Register </button>
 
             </form>
+
 
         </div>
     )

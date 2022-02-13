@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {navigate} from "@reach/router";
 
+
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,6 +31,7 @@ const Login = (props) => {
             // localStorage.setItem("userId", res.data.userId);
             // Utilizing navigate's second arrgument to pass our userId forward
             //Documentation: https://reach.tech/router/api/navigate
+            setErrors("");
             navigate("/compose/dashboard")
         })
         .catch((err) => {
@@ -40,35 +42,32 @@ const Login = (props) => {
 
     return(
         <div className ="login">
+
+
             <h2> Login &hearts; </h2>
-
-            {
-                errors.email? 
-                    <p>{errors.email.message}</p>
-                :null
-            }
-
-            {
-                errors.password? 
-                    <p>{errors.password.message}</p>
-                :null
-            }
+            <p>
+                {
+                    errors?
+                    errors: "" 
+                }
+            </p>
 
             <form onSubmit={login}>
 
                 <div className="form-field">
                     <label> Email </label>
-                    <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" name="email" value={email} required="required" onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
                 <div className="form-field">
                     <label> Password </label>
-                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" name="password" value={password} required="required" onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
-                <button> Sign In </button>
+                <button className="login-button"> Sign In </button>
 
             </form>
+
 
         </div>
     )

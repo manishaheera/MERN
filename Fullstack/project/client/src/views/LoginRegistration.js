@@ -15,7 +15,7 @@ const LoginRegistration = (props) => {
     };
 
     return(
-        <div>
+        <div className="wrapper">
         
 
             <Particles
@@ -23,11 +23,6 @@ const LoginRegistration = (props) => {
                 init={particlesInit}
                 loaded={particlesLoaded}
                 options={{
-                    // background: {
-                    // color: {
-                    //     value: "#0d47a1",
-                    // },
-                    // },
                     fpsLimit: 200,
                     interactivity: {
                     events: {
@@ -111,20 +106,22 @@ const LoginRegistration = (props) => {
                     onInit={(typewriter) => {
                         typewriter.typeString("Compose").start();
                 }}/>
+
             </h1>
 
-
+            
+            <img src={require('../images/bears.png')} className="bears" />
             
             <div className="background">
-
-            <img src={require('../images/bears.png')} className="bears" />
 
                 <div className="login-reg-box">
                     <Registration/>
                     <Login />
+
                 </div>
 
                 <footer> © 2022 Compose | Seattle, Washington | All Rights Reserved. </footer>
+
             </div>
 
         </div>

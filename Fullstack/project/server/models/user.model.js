@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const uniqueValidator = require('mongoose-unique-validator');
 
 
 const UserSchema = new mongoose.Schema ({
@@ -7,11 +8,15 @@ const UserSchema = new mongoose.Schema ({
     username: {
         type: String,
         required: [true, "Username is required!" ],
+        unique: true,
+        uniqueCaseInsensitive: true,
     },
 
     email: {
         type: String,
         required: [true, "Email address is required!" ],
+        unique: true,
+        uniqueCaseInsensitive: true,
     },
 
     password: {
@@ -22,10 +27,11 @@ const UserSchema = new mongoose.Schema ({
 
 }, {timestamps: true}) 
 
+
 // virtual field, stores information during request but not in database/collection 
 
 UserSchema.virtual("confirmPassword")
-    .get(()=> this._confirmPassword)
+    .get(() => this._confirmPassword)
     .set((value) => this._confirmPassword = value)
 
 UserSchema.pre("validate", function(next) {
@@ -49,4 +55,5 @@ UserSchema.pre("save", function(next){
 })
 
 const User = mongoose.model("User", UserSchema);
+UserSchema.plugin(uniqueValidator, {message: `username or email already in use`});
 module.exports = User;

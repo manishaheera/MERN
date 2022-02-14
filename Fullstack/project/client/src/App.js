@@ -5,12 +5,13 @@ import {Router} from '@reach/router';
 
 function App() {
 
+
   return (
-    <div className="App">
+    <div className="app">
 
       <Router>
 
-        <LoginRegistration path="/"/>
+        <LoginRegistration path="/" />
         <Dashboard path="/compose/dashboard" />
 
       </Router>

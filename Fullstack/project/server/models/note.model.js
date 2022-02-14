@@ -11,6 +11,7 @@ const NoteSchema = new mongoose.Schema ({
     content: {
         type: String,
         required: [true, "Note cannot be empty!" ],
+        maxlength: [255, "Note may not exceed 255 characters"],
     },
 
     createdBy: {

@@ -56,12 +56,12 @@ const Login = (props) => {
 
                 <div className="form-field">
                     <label> Email </label>
-                    <input type="email" name="email" value={email} required="required" onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" className="LR-input" name="email" value={email} required="required" onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
                 <div className="form-field">
                     <label> Password </label>
-                    <input type="password" name="password" value={password} required="required" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" className="LR-input" name="password" value={password} required="required" onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 <button className="login-button"> Sign In </button>

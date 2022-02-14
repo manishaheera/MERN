@@ -87,28 +87,29 @@ const Registration = (props) => {
             
             <form onSubmit={register}>
 
+
                 <div className="form-field">
                     <label> Username </label>
-                    <input type="text" name="username" required="required" value={user.username} onChange={(e) => handleChange(e)} onClick={()=> setConfirmReg("")} />
+                    <input type="text" className="LR-input" name="username" required="required" value={user.username} onChange={(e) => handleChange(e)} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Email </label>
-                    <input type="email" name="email" required="required" value={user.email} onChange={handleChange} onClick={()=> setConfirmReg("")} />
+                    <input type="email" className="LR-input" name="email" required="required" value={user.email} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Password </label>
-                    <input type="password" name="password" required="required" value={user.password} onChange={handleChange} onClick={()=> setConfirmReg("")} />
+                    <input type="password" className="LR-input" name="password" required="required" value={user.password} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
                     <label> Confirm Password </label>
-                    <input type="password" name="confirmPassword" required="required" value={user.confirmPassword} onChange={handleChange} onClick={()=> setConfirmReg("")} />
+                    <input type="password" className="LR-input" name="confirmPassword" required="required" value={user.confirmPassword} onChange={handleChange} onClick={()=> setConfirmReg("")} />
                 </div>
 
                 <div className="form-field">
-                    <input type="checkbox" required="required" />
+                    <input type="checkbox" className="LR-input" required="required" />
                     <label className="terms-policy"> 
                         I  agree with the <terms> Terms & Conditions</terms> and <terms> Privacy Policy </terms>
                     </label>

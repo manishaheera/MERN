@@ -28,7 +28,7 @@ module.exports = {
     },
 
     findAllNotes: (req, res) => {
-        Note.find({}).collation({locale:'en', strength:2}).sort({title:1})
+        Note.find({})
             .populate("createdBy", "username email")
             .then((allNotes) => {
                 console.log(allNotes);

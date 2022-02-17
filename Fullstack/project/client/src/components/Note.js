@@ -2,18 +2,31 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
 import AddNote from "./AddNote";
-import moment from "moment";
 import "../styles/Note.css"
 
 
 
 const Note = (props) => {
 
-    const {noteList, setNoteList, user} = props;
+    const {noteList, setNoteList, user, setUser} = props;
+
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/users/secure",
+            { withCredentials: true }
+        )
+            .then((res) => {
+                console.log(res.data);
+                setUser(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [])
 
 
     useEffect(()=> {
-        axios.get(`http://localhost:8000/api/notes/`)
+        axios.get(`http://localhost:8000/api/notes/${user}`,
+        {withCredentials: true})
         .then((res)=>{
             console.log(res);
             console.log(res.data);
@@ -47,8 +60,9 @@ const Note = (props) => {
                     </p>
 
                     <div className= "note-footer">
-                        moment({note.createdAt}).format();
+                        {note.createdAt}
                         <MdDeleteForever className="delete-icon" onClick={()=> deleteNote(note._id)}/>
+
                     </div>
 
 

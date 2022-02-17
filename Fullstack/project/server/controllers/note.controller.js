@@ -81,10 +81,10 @@ module.exports = {
     },
 
     findAllNotesByUser: (req, res) => {
-        if(req.jwtpayload.username !== req.params.username){
+        if(req.jwtpayload.username == req.params.username){ // PAYLOAD MATCHES USER LOGGED IN
             User.findOne({username: req.params.username})
-                .then((userNotLoggedIn) => {
-                    Note.find({createdBy:userNotLoggedIn._id})
+                .then((userLoggedIn) => {
+                    Note.find({createdBy:userLoggedIn._id})
                         .then((allNotesByUser) => {
                             console.log(allNotesByUser);
                             res.json(allNotesByUser)
@@ -99,17 +99,17 @@ module.exports = {
                     res.status(400).json(err);
                 })
         }
-        else{
-            Note.find({createdBy: req.jwtpayload.id})
-                .then((allNotesByLoggedInUser) => {
-                    console.log(allNotesByLoggedInUser);
-                    res.json(allNotesByLoggedInUser)
-                })
-                .catch((err) => {
-                    console.log(err);
-                    res.status(400).json(err);
-                })
-        }
     }
+        // else{
+        //     Note.find({createdBy: req.jwtpayload.id})
+        //         .then((allNotesByLoggedInUser) => {
+        //             console.log(allNotesByLoggedInUser);
+        //             res.json(allNotesByLoggedInUser)
+        //         })
+        //         .catch((err) => {
+        //             console.log(err);
+        //             res.status(400).json(err);
+        //         })
+        // 
 
 }

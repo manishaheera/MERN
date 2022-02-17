@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Note from "../components/Note";
-import AddNote from "../components/AddNote";
 import SearchBox from "../components/SearchBox";
-import Typewriter from "typewriter-effect";
 import { Link, navigate} from '@reach/router';
 
 
@@ -42,9 +40,9 @@ const Dashboard = (props) => {
 
                         Welcome, {user.username} <br></br>
 
-                        <Link to={`/`}> Doodling </Link>
+                        {/* <Link to={`/`}> Doodling </Link>
                         <Link to={`/`}> Cubby </Link>
-                        <Link to={`/`}> Logout </Link>
+                        <Link to={`/`}> Logout </Link> */}
                         </div>
                     
 

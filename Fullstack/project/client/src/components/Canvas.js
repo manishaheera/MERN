@@ -1,0 +1,8 @@
+const startDrawing = () => {
+
+
+}
+
+const endDrawing = () => {
+    
+}

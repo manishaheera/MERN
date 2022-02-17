@@ -25,15 +25,14 @@ h1{
     text-align: center;
     font-size: 80px;
     font-family: 'Pacifico', cursive;
-    -webkit-text-stroke: 2px rgb(164, 126, 126);
-    /* -webkit-text-stroke: 3px rgb(123, 107, 118); */
+    -webkit-text-stroke: 2px rgb(133, 106, 126);
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
     color: white;
 }
 
+
 .login-reg-box {
-    /* background: linear-gradient(transparent,rgb(170, 104, 104),rgb(108, 85, 85)); */
-    background: linear-gradient(transparent,rgb(185, 136, 136),rgb(250, 240, 202),rgb(172, 199, 195));
+    background: linear-gradient(transparent, rgb(199, 168, 199),rgb(212, 177, 177),rgb(250, 240, 202),rgb(196, 218, 201));
     border: 5px solid #351516;
     padding: 10px;
     min-width: fit-content;

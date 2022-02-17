@@ -1,6 +1,6 @@
 import './App.css';
 import LoginRegistration from './views/LoginRegistration';
-import Dashboard from './components/Dashboard';
+import Dashboard from './views/Dashboard';
 import {Router} from '@reach/router';
 
 function App() {

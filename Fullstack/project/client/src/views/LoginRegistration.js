@@ -3,6 +3,7 @@ import Login from "../components/Login";
 import Registration from "../components/Registration";
 import Typewriter from "typewriter-effect";
 import Particles from "react-tsparticles";
+import "../styles/LoginRegistration.css";
 
 const LoginRegistration = (props) => {
 
@@ -108,13 +109,9 @@ const LoginRegistration = (props) => {
                 }}/>
 
                 </h1>
-
-
             
             <img src={require('../images/bears.png')} alt="bears-main" className="bears" />
             
-            <div className="background">
-
                 <div className="login-reg-box">
 
                     <Registration/>
@@ -126,7 +123,6 @@ const LoginRegistration = (props) => {
 
             </div>
 
-        </div>
     )
 
 }

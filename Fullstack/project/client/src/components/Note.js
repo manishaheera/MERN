@@ -2,11 +2,14 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
 import AddNote from "./AddNote";
+import moment from "moment";
+import "../styles/Note.css"
+
 
 
 const Note = (props) => {
 
-    const {noteList, setNoteList} = props;
+    const {noteList, setNoteList, user} = props;
 
 
     useEffect(()=> {
@@ -20,7 +23,7 @@ const Note = (props) => {
 
     }, [])
 
-    const deleteNote = (noteId)=> {
+    const deleteNote = (noteId) => {
         axios.delete(`http://localhost:8000/api/notes/${noteId}`)
         .then((res)=> { 
             console.log(res);
@@ -37,13 +40,17 @@ const Note = (props) => {
             noteList.map((note,index) => (
                 <div key={note._id} className="note">
 
-                    {note.title} &hearts; <br></br>
-                    {note.content}
+                    <mark> {note.title} </mark>
+
+                    <p class="note-content" >
+                        {note.content}
+                    </p>
 
                     <div className= "note-footer">
-                        {note.createdAt}
-                        <MdDeleteForever ClassName="delete-icon" onClick={()=> deleteNote(note._id)}/>
+                        moment({note.createdAt}).format();
+                        <MdDeleteForever className="delete-icon" onClick={()=> deleteNote(note._id)}/>
                     </div>
+
 
                 </div>
             ))

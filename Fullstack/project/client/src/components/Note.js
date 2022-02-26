@@ -2,31 +2,17 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
 import AddNote from "./AddNote";
-import "../styles/Note.css"
-
+import "../styles/Note.css";
 
 
 const Note = (props) => {
 
-    const {noteList, setNoteList, user, setUser} = props;
+    const {user} = props;
+    const [noteList, setNoteList] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/users/secure",
-            { withCredentials: true }
-        )
-            .then((res) => {
-                console.log(res.data);
-                setUser(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }, [])
-
-
-    useEffect(()=> {
-        axios.get(`http://localhost:8000/api/notes/${user}`,
-        {withCredentials: true})
+        axios.get(`http://localhost:8000/api/notes/${user.username}`,
+            { withCredentials:true })
         .then((res)=>{
             console.log(res);
             console.log(res.data);
@@ -50,26 +36,29 @@ const Note = (props) => {
         <div className="notes-list">
 
             {
-            noteList.map((note,index) => (
-                <div key={note._id} className="note">
+                noteList.map((note,index) => (
 
-                    <mark> {note.title} </mark>
+                    <div key={note._id} className="note">
 
-                    <p class="note-content" >
-                        {note.content}
-                    </p>
+                        <mark> {note.title} </mark>
 
-                    <div className= "note-footer">
-                        {note.createdAt}
-                        <MdDeleteForever className="delete-icon" onClick={()=> deleteNote(note._id)}/>
+                        <p class="note-content" >
+                            {note.content}
+
+                        </p>
+
+                        <div className= "note-footer">
+                                {note.createdAt} <br></br>
+                                {note.createdBy.username}
+                                <MdDeleteForever className="delete-icon" onClick={()=> deleteNote(note._id)}/>
+
+                        </div>
 
                     </div>
-
-
-                </div>
-            ))
+                    
+                ))
             }
-            
+
             <AddNote
             noteList= {noteList} 
             setNoteList = {setNoteList}

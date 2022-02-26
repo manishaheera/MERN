@@ -5,6 +5,7 @@ import Typewriter from "typewriter-effect";
 import Particles from "react-tsparticles";
 import "../styles/LoginRegistration.css";
 
+
 const LoginRegistration = (props) => {
 
     const particlesInit = (main) => {
@@ -103,10 +104,9 @@ const LoginRegistration = (props) => {
 
                 <h1>
 
-                <Typewriter 
-                    onInit={(typewriter) => {
-                        typewriter.typeString("Compose").start();
-                }}/>
+                    <Typewriter 
+                        onInit={(typewriter) => {typewriter.typeString("Compose").start();}}
+                    />
 
                 </h1>
             

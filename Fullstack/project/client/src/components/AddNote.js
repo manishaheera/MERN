@@ -8,7 +8,6 @@ const AddNote = (props) => {
     const [noteTitle, setNoteTitle] = useState("");
     const [noteContent, setNoteContent] = useState("");
     const [errors, setErrors] = useState("");
-
     const characterCountLimit = 255;
 
 

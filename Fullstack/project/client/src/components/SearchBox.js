@@ -1,10 +1,8 @@
 import React from "react";
 import { MdSearch } from "react-icons/md";
 
-const SearchBox = ({handleSearchNote}) => {
 
-    
-    
+const SearchBox = ({handleSearchNote}) => {
 
     return(
 

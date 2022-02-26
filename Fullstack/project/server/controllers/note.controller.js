@@ -2,17 +2,11 @@ const Note = require("../models/note.model");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
+
 module.exports = {
     
     createNewNote: (req, res) => {
         const newNoteObject = new Note(req.body);
-
-        // const decodedJWT = jwt.decode(req.cookies.usertoken, {
-        //     complete: true,
-        // })
-
-        // newNoteObject.createdBy = decodedJWT.payload.id
-
 
         newNoteObject.createdBy = req.jwtpayload.id
 
@@ -80,36 +74,17 @@ module.exports = {
         })
     },
 
-    findAllNotesByUser: (req, res) => {
-        if(req.jwtpayload.username == req.params.username){ // PAYLOAD MATCHES USER LOGGED IN
-            User.findOne({username: req.params.username})
-                .then((userLoggedIn) => {
-                    Note.find({createdBy:userLoggedIn._id})
-                        .then((allNotesByUser) => {
-                            console.log(allNotesByUser);
-                            res.json(allNotesByUser)
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                            res.status(400).json(err);
-                        })
-                })
-                .catch((err) => {
-                    console.log(err);
-                    res.status(400).json(err);
-                })
+    findAllNotesByUser: (req, res) => {{ 
+        Note.find({createdBy: req.jwtpayload.id})
+            .then((allNotesByLoggedInUser) => {
+                console.log(allNotesByLoggedInUser);
+                res.json(allNotesByLoggedInUser)
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(400).json(err);
+            })
         }
     }
-        // else{
-        //     Note.find({createdBy: req.jwtpayload.id})
-        //         .then((allNotesByLoggedInUser) => {
-        //             console.log(allNotesByLoggedInUser);
-        //             res.json(allNotesByLoggedInUser)
-        //         })
-        //         .catch((err) => {
-        //             console.log(err);
-        //             res.status(400).json(err);
-        //         })
-        // 
 
 }

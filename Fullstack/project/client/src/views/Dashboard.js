@@ -2,12 +2,11 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
-import { Link, navigate} from '@reach/router';
+import {Link, navigate} from '@reach/router';
 
 
 const Dashboard = (props) => {
 
-    const [noteList, setNoteList] = useState([]);
     const [user, setUser] = useState({});
     const [search, setSearch] = useState("");
 
@@ -24,6 +23,25 @@ const Dashboard = (props) => {
             })
     }, [])
 
+    const logout = (e) => {
+        axios
+            .post(
+                "http://localhost:8000/api/users/logout",
+                {}, // As a post request, we MUST send something with our request.
+                // Because we're not adding anything, we can send a simple MT object 
+                {
+                    withCredentials: true,
+                },
+            )
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/")
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 
     return(
         <div className="dashboard">
@@ -31,19 +49,19 @@ const Dashboard = (props) => {
             <div className="notes-container" >
 
                 <header>
+
                     <h7>
-                    Notes
+                        Notes
                     </h7>
                     
 
-                        <div className="links" > 
+                    <div className="links" > 
 
                         Welcome, {user.username} <br></br>
 
-                        {/* <Link to={`/`}> Doodling </Link>
-                        <Link to={`/`}> Cubby </Link>
-                        <Link to={`/`}> Logout </Link> */}
-                        </div>
+                    </div>
+
+                    <button onClick ={logout}> Logout </button>
                     
 
                     <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />
@@ -55,12 +73,9 @@ const Dashboard = (props) => {
                 handleSearchNote = {setSearch}
                 />
 
-                    
                 <Note
-                    user = {user}
-                    setUser = {setUser}
-                    noteList= {noteList} 
-                    setNoteList = {setNoteList}
+                    user= {user}
+                    setUser= {setUser}
                 />
 
             </div>

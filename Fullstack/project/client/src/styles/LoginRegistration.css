@@ -25,14 +25,14 @@ h1{
     text-align: center;
     font-size: 80px;
     font-family: 'Pacifico', cursive;
-    -webkit-text-stroke: 3px rgb(133, 106, 126);
+    -webkit-text-stroke: 3px rgb(151, 120, 134);
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
     color: white;
 }
 
 
 .login-reg-box {
-    background: linear-gradient(transparent, rgb(199, 168, 199),rgb(212, 177, 177),rgb(250, 240, 202),rgb(196, 218, 201));
+    background: linear-gradient(transparent, rgb(190, 168, 183),rgb(212, 174, 174),rgb(230, 176, 176));
     border: 5px solid #351516;
     padding: 10px;
     min-width: fit-content;

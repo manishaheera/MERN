@@ -3,6 +3,7 @@ import axios from "axios";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
 import {Link, navigate} from '@reach/router';
+import "../styles/Note.css";
 
 
 const Dashboard = (props) => {
@@ -59,9 +60,10 @@ const Dashboard = (props) => {
 
                         Welcome, {user.username} <br></br>
 
-                    </div>
+                        <button className="logout-button"> Doodle Time! </button>
+                        <button onClick ={logout} className="logout-button"> Logout </button>
 
-                    <button onClick ={logout}> Logout </button>
+                    </div>
                     
 
                     <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />

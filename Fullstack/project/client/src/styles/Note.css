@@ -1,5 +1,3 @@
-.dashboard{
-}
 
 header{
     background-color: #CFE6DD;
@@ -19,9 +17,18 @@ h7{
 } 
 
 .links{
-    display:flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
+    padding: 5px;
+}
+
+.logout-button{
+    font-family: 'Cutive Mono', monospace;
+    padding: 3px;
+    margin-left: 10px;
+    height: 30px;
+    background-color: #CFE6DD;
+    border-style: none;
+    transition: 350ms;
+    margin-top: 10px;
 }
 
 .notes-container{
@@ -110,6 +117,7 @@ textarea:focus{
     border: none;
     border-radius: 15px;
     padding: 5px 10px 5px 10px;
+    transition: 350ms;
 }
 
 .save:hover{

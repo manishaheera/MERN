@@ -1,6 +1,6 @@
 
 header{
-    background-color: #CFE6DD;
+    background-color: #DBC6C5;
     display: flex;
     justify-content: space-between;
     border: 3px solid #351516;
@@ -16,19 +16,30 @@ h7{
     padding: 5px;
 } 
 
+.welcome-message{
+    font-weight: bolder;
+    font-size: larger;
+}
+
 .links{
     padding: 5px;
 }
 
 .logout-button{
+    color: #7f4510;
+    font-weight: bolder;
     font-family: 'Cutive Mono', monospace;
     padding: 3px;
     margin-left: 10px;
     height: 30px;
-    background-color: #CFE6DD;
     border-style: none;
     transition: 350ms;
     margin-top: 10px;
+    background: transparent;
+}
+
+.logout-button:hover{
+    filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
 }
 
 .notes-container{
@@ -68,8 +79,7 @@ h7{
 .note{
     white-space: pre-wrap;
     background-color: #F9DE87;
-    background: linear-gradient(#ffffff,#ecebec);
-    /* background-image: url("../src/images/note-background.png"); */
+    /* background: linear-gradient(#ffffff,#847c31); */
     border-radius: 10px;
     padding: 1rem;
     min-height: 170px;
@@ -98,11 +108,11 @@ mark{
 
 .note.new{
     background: none;
-    background-color: #ffd7db;
+    background-color: #D8A263;
 }
 
 textarea{
-    background-color: #ffd7db;
+    background-color: #D8A263;
     border: none;
     resize: none;
 }
@@ -113,11 +123,12 @@ textarea:focus{
 
 .save{
     font-family: 'Cutive Mono', monospace;
-    background-color: #ffffff;
+    background-color: white;
     border: none;
     border-radius: 15px;
     padding: 5px 10px 5px 10px;
     transition: 350ms;
+    font-weight: bolder;
 }
 
 .save:hover{

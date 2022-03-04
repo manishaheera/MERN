@@ -58,7 +58,9 @@ const Dashboard = (props) => {
 
                     <div className="links" > 
 
-                        Welcome, {user.username} <br></br>
+                        <div className="welcome-message"> 
+                            Welcome, {user.username} 
+                        </div>
 
                         <button className="logout-button"> Doodle Time! </button>
                         <button onClick ={logout} className="logout-button"> Logout </button>

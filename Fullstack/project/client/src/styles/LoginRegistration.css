@@ -25,14 +25,14 @@ h1{
     text-align: center;
     font-size: 80px;
     font-family: 'Pacifico', cursive;
-    -webkit-text-stroke: 3px rgb(151, 120, 134);
+    -webkit-text-stroke: 3px rgb(207, 171, 103);
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
     color: white;
 }
 
 
 .login-reg-box {
-    background: linear-gradient(transparent, rgb(190, 168, 183),rgb(212, 174, 174),rgb(230, 176, 176));
+    background: linear-gradient(transparent, rgb(219, 160, 170),#DBC6C5, rgb(190, 162, 150), rgb(230, 198, 139));
     border: 5px solid #351516;
     padding: 10px;
     min-width: fit-content;
@@ -99,7 +99,7 @@ p{
 }
 
 terms{
-    color: #3f6e49;
+    color: #7f4510;
     text-decoration: underline;
 }
 
@@ -108,7 +108,8 @@ terms{
     border-style: none;
     background-color: #F9DE87;
     font-family: 'Cutive Mono', monospace;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
     transition: 350ms;
 }
 
@@ -118,7 +119,7 @@ terms{
 }
 
 footer{
-    /* font-family: 'Pacifico', cursive; */
+    margin-top: 5px;
     font-size: 10px;
     text-align: center;
 }

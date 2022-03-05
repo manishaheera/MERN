@@ -53,6 +53,8 @@ const Dashboard = (props) => {
 
             <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
+            <div className="notepad">
+
                 <header>
 
                     <h7>
@@ -85,6 +87,8 @@ const Dashboard = (props) => {
                     user= {user}
                     setUser= {setUser}
                 />
+
+            </div>
 
             </div>
             

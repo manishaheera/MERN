@@ -36,7 +36,7 @@ const Note = (props) => {
         <div className="notes-list">
 
             {
-                noteList.map((note,index) => (
+                noteList.map((note,index)=> (
 
                     <div key={note._id} className="note">
 
@@ -48,8 +48,7 @@ const Note = (props) => {
                         </p>
 
                         <div className= "note-footer">
-                                {note.createdAt} <br></br>
-                                {note.createdBy.username}
+                                {note.date} <br></br>
                                 <MdDeleteForever className="delete-icon" onClick={()=> deleteNote(note._id)}/>
 
                         </div>

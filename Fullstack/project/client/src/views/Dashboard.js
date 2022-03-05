@@ -47,7 +47,11 @@ const Dashboard = (props) => {
     return(
         <div className="dashboard">
 
+            {/* <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" /> */}
+
             <div className="notes-container" >
+
+            <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
                 <header>
 

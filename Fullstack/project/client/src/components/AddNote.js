@@ -47,7 +47,7 @@ const AddNote = (props) => {
 
             <div className="note new">
 
-                <p>
+                <p className="error-message">
                     {
                         errors.title?
                         <p>{errors.title.message}</p>
@@ -55,7 +55,7 @@ const AddNote = (props) => {
                     }
                 </p>
 
-                <p>
+                <p className="error-message">
                     {
                         errors.content?
                         <p>{errors.content.message}</p>

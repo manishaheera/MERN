@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongooseDateFormat = require('mongoose-date-format');
 
 
 const NoteSchema = new mongoose.Schema ({
@@ -14,6 +15,12 @@ const NoteSchema = new mongoose.Schema ({
         maxlength: [255, "Note may not exceed 255 characters"],
     },
 
+    date: {
+        type: Date,
+        default: Date.now,
+    }
+    ,
+
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
@@ -22,7 +29,7 @@ const NoteSchema = new mongoose.Schema ({
 
 }, {timestamps: true}) 
 
-
+NoteSchema.plugin(mongooseDateFormat);  // format: YYYY-MM-DD HH:mm:ss
 const Note = mongoose.model("Note", NoteSchema);
 
 

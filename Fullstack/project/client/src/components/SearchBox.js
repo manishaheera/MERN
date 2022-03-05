@@ -9,7 +9,7 @@ const SearchBox = ({handleSearchNote}) => {
         <div className="search-box">
 
             <MdSearch className="search-icons" size="1.3em" />
-            <input className="search-input" type="text" placeholder="type to search..." onChange={(e) => handleSearchNote(e.target.value) } />
+            <input className="search-input" type="text" placeholder="type to search notes..." onChange={(e) => handleSearchNote(e.target.value) } />
 
         </div>
     )

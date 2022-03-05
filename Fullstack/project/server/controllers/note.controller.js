@@ -22,7 +22,7 @@ module.exports = {
     },
 
     findAllNotes: (req, res) => {
-        Note.find({})
+        Note.find({}).sort({date:-1})
             .populate("createdBy", "username email")
             .then((allNotes) => {
                 console.log(allNotes);
@@ -75,7 +75,7 @@ module.exports = {
     },
 
     findAllNotesByUser: (req, res) => {{ 
-        Note.find({createdBy: req.jwtpayload.id})
+        Note.find({createdBy: req.jwtpayload.id}).sort({date:-1})
             .then((allNotesByLoggedInUser) => {
                 console.log(allNotesByLoggedInUser);
                 res.json(allNotesByLoggedInUser)

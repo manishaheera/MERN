@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
-import {Link, navigate} from '@reach/router';
+import {link, navigate} from '@reach/router';
 import "../styles/Note.css";
 
 
@@ -10,7 +10,7 @@ const Dashboard = (props) => {
 
     const [user, setUser] = useState({});
     const [search, setSearch] = useState("");
-
+    
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
             { withCredentials: true }
@@ -47,8 +47,6 @@ const Dashboard = (props) => {
     return(
         <div className="dashboard">
 
-            {/* <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" /> */}
-
             <div className="notes-container" >
 
             <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
@@ -68,7 +66,7 @@ const Dashboard = (props) => {
                             Welcome, {user.username} 
                         </div>
 
-                        <button className="logout-button"> Doodle Time! </button>
+                        <button onClick={()=> navigate("/compose/canvas")} className="logout-button"> Doodle Time! </button>
                         <button onClick ={logout} className="logout-button"> Logout </button>
 
                     </div>

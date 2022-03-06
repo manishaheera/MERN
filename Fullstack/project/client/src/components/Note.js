@@ -35,6 +35,11 @@ const Note = (props) => {
     return(
         <div className="notes-list">
 
+            <AddNote
+            noteList= {noteList} 
+            setNoteList = {setNoteList}
+            />
+
             {
                 noteList.map((note,index)=> (
 
@@ -57,11 +62,6 @@ const Note = (props) => {
                     
                 ))
             }
-
-            <AddNote
-            noteList= {noteList} 
-            setNoteList = {setNoteList}
-            />
 
         </div>
     )

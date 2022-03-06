@@ -32,7 +32,7 @@ h1{
 
 
 .login-reg-box {
-    background: linear-gradient(transparent, rgb(219, 160, 170),#DBC6C5, rgb(190, 162, 150), rgb(230, 198, 139));
+    background: linear-gradient(transparent,rgb(211, 173, 179),rgb(219, 160, 170), rgb(190, 162, 150),rgb(182, 164, 137), rgb(230, 198, 139));
     border: 5px solid #351516;
     padding: 10px;
     min-width: fit-content;

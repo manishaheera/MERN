@@ -41,7 +41,6 @@ const AddNote = (props) => {
     }
 
     return(
-
         
         <form onSubmit={createNote} >
 
@@ -64,7 +63,7 @@ const AddNote = (props) => {
                 </p>
             
                     <textarea type="text" name="noteTitle" placeholder="title" value={noteTitle} onChange={(e)=> setNoteTitle(e.target.value)} /> 
-                    <textarea   rows="8" cols="10" type="text" name="noteContent" placeholder="type to add a new note..." value={noteContent} onChange={(e)=> setNoteContent(e.target.value)} /> 
+                    <textarea rows="8" cols="10" type="text" name="noteContent" placeholder="type to add a new note..." value={noteContent} onChange={(e)=> setNoteContent(e.target.value)} /> 
 
 
                     <div className="note-footer">

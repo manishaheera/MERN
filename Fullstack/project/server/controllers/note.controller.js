@@ -21,18 +21,18 @@ module.exports = {
                 })
     },
 
-    findAllNotes: (req, res) => {
-        Note.find({}).sort({date:-1})
-            .populate("createdBy", "username email")
-            .then((allNotes) => {
-                console.log(allNotes);
-                res.json(allNotes)
-            })
-            .catch((err) =>{ 
-                console.log("Find all notes failed");
-                res.json({message: "Error in findAllNotes", error: err})
-            })
-    },
+    // findAllNotes: (req, res) => {
+    //     Note.find({}).sort({date:-1})
+    //         .populate("createdBy", "username email")
+    //         .then((allNotes) => {
+    //             console.log(allNotes);
+    //             res.json(allNotes)
+    //         })
+    //         .catch((err) =>{ 
+    //             console.log("Find all notes failed");
+    //             res.json({message: "Error in findAllNotes", error: err})
+    //         })
+    // },
 
     findOneNote: (req, res) => {
         Note.findOne({_id: req.params.id})
@@ -58,21 +58,21 @@ module.exports = {
             })
     },
 
-    updateNote: (req,res) => {
-        Note.findOneAndUpdate(
-            {_id: req.params.id},
-            req.body,
-            {new: true, runValidators: true}
-        )
-        .then((updatedNote) => {
-            console.log(updatedNote);
-            res.json(updatedNote)
-        })
-        .catch((err)=>{ 
-            console.log("Update note failed");
-            res.status(400).json(err);
-        })
-    },
+    // updateNote: (req,res) => {
+    //     Note.findOneAndUpdate(
+    //         {_id: req.params.id},
+    //         req.body,
+    //         {new: true, runValidators: true}
+    //     )
+    //     .then((updatedNote) => {
+    //         console.log(updatedNote);
+    //         res.json(updatedNote)
+    //     })
+    //     .catch((err)=>{ 
+    //         console.log("Update note failed");
+    //         res.status(400).json(err);
+    //     })
+    // },
 
     findAllNotesByUser: (req, res) => {{ 
         Note.find({createdBy: req.jwtpayload.id}).sort({date:-1})

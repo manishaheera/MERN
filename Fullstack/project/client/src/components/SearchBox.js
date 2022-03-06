@@ -4,6 +4,7 @@ import { MdSearch } from "react-icons/md";
 
 const SearchBox = ({handleSearchNote}) => {
 
+
     return(
 
         <div className="search-box">

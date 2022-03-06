@@ -113,6 +113,7 @@ h7{
     justify-content: space-between;
     white-space: pre-wrap;
     border: 2.5px solid #351516;
+    margin-bottom: 1rem;
 }
 
 mark{
@@ -136,7 +137,7 @@ mark{
     background: url("../images/note.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .error-message{

@@ -1,6 +1,8 @@
 import './App.css';
 import LoginRegistration from './views/LoginRegistration';
 import Dashboard from './views/Dashboard';
+import Canvas from './components/Canvas';
+
 import {Router} from '@reach/router';
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
 
         <LoginRegistration path="/" />
         <Dashboard path="/compose/dashboard" />
+        <Canvas path="/compose/canvas" />
 
       </Router>
   

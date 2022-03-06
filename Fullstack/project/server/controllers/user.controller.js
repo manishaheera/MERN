@@ -79,17 +79,17 @@ module.exports = {
             })
     },
 
-    getAllUsers: (req, res) => {
-        User.find({}).collation({locale:'en', strength:2}).sort({name:1})
-            .then((allUsers) => {
-                console.log(allUsers);
-                res.json(allUsers)
-            })
-            .catch((err) => { 
-                console.log("Find all users failed");
-                res.json({message: "Error in getAllUsers", error: err})
-            })
-    },
+    // getAllUsers: (req, res) => {
+    //     User.find({}).collation({locale:'en', strength:2}).sort({name:1})
+    //         .then((allUsers) => {
+    //             console.log(allUsers);
+    //             res.json(allUsers)
+    //         })
+    //         .catch((err) => { 
+    //             console.log("Find all users failed");
+    //             res.json({message: "Error in getAllUsers", error: err})
+    //         })
+    // },
 
     // OK TO USE BUT BETTER/SAFER PRACTICE BELOW
     // getUser: (req,res) => {
@@ -119,17 +119,17 @@ module.exports = {
         })
     },
 
-    deleteUser: (req, res) => {
-        User.deleteOne({_id: req.params.id})
-            .then((deletedUser) => {
-                console.log(deletedUser);
-                res.json(deletedUser)
-            })
-            .catch((err) =>{ 
-                console.log("delete user failed");
-                res.json({message: "Error in deleteuser", error: err})
-            })
-    },
+    // deleteUser: (req, res) => {
+    //     User.deleteOne({_id: req.params.id})
+    //         .then((deletedUser) => {
+    //             console.log(deletedUser);
+    //             res.json(deletedUser)
+    //         })
+    //         .catch((err) =>{ 
+    //             console.log("delete user failed");
+    //             res.json({message: "Error in deleteuser", error: err})
+    //         })
+    // },
 
 
 }

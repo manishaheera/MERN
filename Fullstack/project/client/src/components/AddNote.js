@@ -29,10 +29,10 @@ const AddNote = (props) => {
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
+                setNoteList([res.data, ...noteList]) //adds res.data to beginning of list 
                 setNoteTitle("");
                 setNoteContent("");
                 setErrors("");
-                setNoteList([...noteList, res.data])
             })
             .catch((err) => {
                 console.log(err);

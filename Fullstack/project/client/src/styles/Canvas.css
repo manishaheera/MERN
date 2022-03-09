@@ -5,6 +5,8 @@
     margin-right: auto;
     margin-left: auto;
     min-height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 header2{
@@ -12,12 +14,24 @@ header2{
     justify-content: space-between;
     background-color: #FFDEDE;
     border: 4px solid #351516;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.doodle-controller{
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.color-input{
+    outline:none;
+    border: none;
 }
 
 .doodle{
     border-top: none;
-    border: 10px solid #575454;
-    border-top: none;
+    border: 10px solid #929798;
 }
 
 button{
@@ -26,7 +40,7 @@ button{
 }
 
 h7{
-    color:pink;
+    color: pink;
 }
 
 

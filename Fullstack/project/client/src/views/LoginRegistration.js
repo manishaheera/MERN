@@ -105,17 +105,26 @@ const LoginRegistration = (props) => {
                 <h1>
 
                     <Typewriter 
-                        onInit={(typewriter) => {typewriter.typeString("Compose").start();}}
-                    />
+                        onInit={(typewriter) => {typewriter.typeString("Compose").start();}} 
+                        />
 
                 </h1>
             
             <img src={require('../images/bears.png')} alt="bears-main" className="bears" />
+
+
             
                 <div className="login-reg-box">
 
-                    <Registration/>
-                    <Login />
+                <h3> The 'bear' necesseties for all things noteworthy</h3> 
+
+                
+                    <div className="login-reg">
+
+                        <Registration/>
+                        <Login />
+
+                    </div>
 
                 </div>
 

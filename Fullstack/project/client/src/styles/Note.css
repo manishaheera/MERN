@@ -1,13 +1,6 @@
 
 .spiral-bound{
     max-width: 100%;
-    /* margin-bottom: 20px; */
-    /* max-width: 960px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    min-width: min-content; */
 }
 
 header{
@@ -20,7 +13,6 @@ header{
 }
 
 h7{
-    text-align: center;
     font-size: 80px;
     font-family: 'Pacifico', cursive;
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
@@ -30,8 +22,12 @@ h7{
 } 
 
 .welcome-message{
+    /* color: rgb(89, 61, 61); */
+    color: white;
+    font-family: 'Pacifico', cursive;
+    filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
     font-weight: bolder;
-    font-size: larger;
+    font-size: 30px;
 }
 
 .links{
@@ -39,9 +35,9 @@ h7{
 }
 
 .logout-button{
-    color: #7f4510;
-    font-weight: bolder;
-    font-family: 'Cutive Mono', monospace;
+    /* color: #7f4510; */
+    /* font-weight: bolder; */
+    /* font-family: 'Cutive Mono', monospace; */
     padding: 3px;
     margin-left: 10px;
     height: 30px;
@@ -56,7 +52,7 @@ h7{
 }
 
 .notepad{
-    border: 4px solid #000000;
+    /* border: 4px solid #000000; */
     border-top: none;
     padding-right: 15px;
     padding-left: 15px;
@@ -69,10 +65,7 @@ h7{
     max-width: 960px;
     margin-right: auto;
     margin-left: auto;
-    /* padding-right: 15px;
-    padding-left: 15px; */
     min-height: 100vh;
-    /* border: 4px solid #f8f4f4; */
     border-top: none;
 }
 

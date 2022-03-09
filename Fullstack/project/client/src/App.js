@@ -15,7 +15,7 @@ function App() {
 
         <LoginRegistration path="/" />
         <Dashboard path="/compose/dashboard" />
-        <Canvas path="/compose/canvas" />
+        <Canvas path="/compose/doodle" />
 
       </Router>
   

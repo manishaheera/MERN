@@ -11,6 +11,12 @@ const Dashboard = (props) => {
     const [user, setUser] = useState({});
     const [search, setSearch] = useState("");
     
+
+
+
+    // const [posts, setPosts] = useState([]);
+    // const [loading, setLoading] = useState(false)
+
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
             { withCredentials: true }
@@ -66,7 +72,7 @@ const Dashboard = (props) => {
                             Welcome, {user.username} 
                         </div>
 
-                        <button onClick={()=> navigate("/compose/canvas")} className="logout-button"> Doodle Time! </button>
+                        <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle</button>
                         <button onClick ={logout} className="logout-button"> Logout </button>
 
                     </div>

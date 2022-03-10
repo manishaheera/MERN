@@ -64,6 +64,11 @@ h7{
     border-top: none;
 }
 
+h4{
+    font-size: larger;
+    padding: 1rem;
+}
+
 .search-box{
     padding: 5px;
     display: flex;

@@ -15,7 +15,7 @@ app.use(cors({
     origin:"http://localhost:3000",
 }))
 
-//configures server to accept and update cookies
+// Configures server to accept and update cookies
 app.use(cookieParser());
 
 

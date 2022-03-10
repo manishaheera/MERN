@@ -27,7 +27,6 @@ const UserSchema = new mongoose.Schema ({
 
 }, {timestamps: true}) 
 
-
 // virtual field, stores information during request but not in database/collection 
 
 UserSchema.virtual("confirmPassword")

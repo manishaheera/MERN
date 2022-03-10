@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import Quote from "../components/Quote";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
 import {navigate} from '@reach/router';
@@ -71,6 +72,8 @@ const Dashboard = (props) => {
                         
                         <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />
                     </header>
+
+                    <Quote />
 
                     <SearchBox 
                     handleSearchNote = {setSearch}

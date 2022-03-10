@@ -55,7 +55,7 @@ module.exports = {
                                         httpOnly: true,
                                         expires: new Date( Date.now() + 90000000)
                                     },
-                                ).json({ //client
+                                ).json({ // client
                                     message: "Successfully logged in",
                                     userLoggedIn : userRecord.username,
                                     userId : userRecord._id
@@ -130,6 +130,5 @@ module.exports = {
     //             res.json({message: "Error in deleteuser", error: err})
     //         })
     // },
-
 
 }

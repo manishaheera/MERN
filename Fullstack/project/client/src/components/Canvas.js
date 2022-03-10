@@ -23,6 +23,26 @@ const Canvas = (props) => {
             })
     }, [])
 
+    const logout = (e) => {
+        axios
+            .post(
+                "http://localhost:8000/api/users/logout",
+                {}, // As a post request, we MUST send something with our request.
+                // Because we're not adding anything, we can send a simple MT object 
+                {
+                    withCredentials: true,
+                },
+            )
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/")
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     const styles = {
         border: '0.0625rem solid #9c9c9c',
         borderRadius: '0.25rem',
@@ -31,22 +51,29 @@ const Canvas = (props) => {
     const thisCanvas = useRef(null)
 
 return (
+
     <div className="canvas-container"> 
-    <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
-    <header2>
-        <h7> Doodle</h7> <br></br>
-        <button onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
-        {/* <button> Locker </button> */}
-        <button> Logout </button>
-        <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />
-    </header2> 
+        <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
-    <div className="doodle-controller">
-        <button onClick={(e)=> setDrawingMode(false)}> Erase </button>
-        <button> Draw </button>
-        <button onClick={(e)=> window.location.reload()}> Clear </button>
-    </div>
+        <header2>
+            <h7> Doodle</h7> 
+
+            <div className="welcome-message"> 
+                Welcome, {user.username} 
+            </div>
+
+            <button onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
+            <button onClick ={logout}> Logout </button>
+
+            <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />
+        </header2> 
+
+        <div className="doodle-controller">
+            <button onClick={(e)=> setDrawingMode(false)}> Erase </button>
+            <button> Draw </button>
+            <button onClick={(e)=> window.location.reload()}> Clear </button>
+        </div>
 
         <div className="doodle">
             <ReactSketchCanvas
@@ -55,17 +82,15 @@ return (
                 width="100%"
                 height="900px"
                 strokeWidth={5}
-                strokeColor={ "#" + Math.floor(Math.random() * 12283445).toString(16)} 
-                // strokeColor="white"
+                // strokeColor={ "#" + Math.floor(Math.random() * 12283445).toString(16)} 
+                strokeColor="white"
                 canvasColor="#312B2A"
                 drawMode ={drawingMode}
             />
-
         </div>
+
     </div>
 )
-
 }
-
 
 export default Canvas;

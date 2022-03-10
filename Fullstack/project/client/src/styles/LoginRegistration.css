@@ -32,7 +32,7 @@ h1{
 
 
 .login-reg-box {
-    background: linear-gradient(transparent,rgb(211, 173, 179),rgb(219, 160, 170), rgb(190, 162, 150),rgb(182, 164, 137), rgb(230, 198, 139));
+    background: linear-gradient(transparent,rgb(211, 173, 179),rgb(219, 160, 170), rgb(197, 176, 167),rgb(185, 171, 151), rgb(230, 198, 139));
     border: 5px solid #351516;
     padding: 10px;
     min-width: fit-content;
@@ -89,12 +89,12 @@ h6{
     color: rgb(255, 255, 255);
 }
 
-p{
+.error-message{
     font-family: 'Cutive Mono', monospace;
-    color: #321410;
+    color: #8e1100;
     font-weight: bolder;
     font-size: smaller;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .form-field{

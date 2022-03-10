@@ -10,7 +10,6 @@ const AddNote = (props) => {
     const [errors, setErrors] = useState("");
     const characterCountLimit = 255;
 
-
     const createNote = (e) => {
         e.preventDefault();
 
@@ -62,20 +61,17 @@ const AddNote = (props) => {
                     }
                 </p>
             
-                    <textarea type="text" name="noteTitle" placeholder="title" value={noteTitle} onChange={(e)=> setNoteTitle(e.target.value)} /> 
-                    <textarea rows="8" cols="10" type="text" name="noteContent" placeholder="type to add a new note..." value={noteContent} onChange={(e)=> setNoteContent(e.target.value)} /> 
+                <textarea type="text" name="noteTitle" placeholder="title" value={noteTitle} onChange={(e)=> setNoteTitle(e.target.value)} /> 
+                <textarea rows="8" cols="10" type="text" name="noteContent" placeholder="type to add a new note..." value={noteContent} onChange={(e)=> setNoteContent(e.target.value)} /> 
 
-
-                    <div className="note-footer">
-
-                            <small> {characterCountLimit - noteContent.length} </small>
-                            <button className="save"> Save &hearts; </button>
-                                
-                    </div>
+                <div className="note-footer">
+                    <small> {characterCountLimit - noteContent.length} </small>
+                    <button className="save"> Save &hearts; </button>
+                </div>
 
             </div>
 
-            </form>
+        </form>
 
     )
 }

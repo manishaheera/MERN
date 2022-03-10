@@ -42,11 +42,12 @@ const Login = (props) => {
     }
 
     return(
-        <div className ="login">
 
+        <div className="login">
 
             <h2> Login &hearts; </h2>
-            <p>
+
+            <p className="error-message">
                 {
                     errors?
                     errors: "" 
@@ -69,10 +70,8 @@ const Login = (props) => {
 
             </form>
 
-
         </div>
     )
-
 }
 
 export default Login;

@@ -106,7 +106,6 @@ h7{
     justify-content: space-between;
     white-space: pre-wrap;
     border: 2.5px solid #351516;
-    margin-bottom: 1rem;
 }
 
 mark{
@@ -130,7 +129,7 @@ mark{
     background: url("../images/note.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 1rem;
+
 }
 
 .error-message{
@@ -167,4 +166,13 @@ textarea:focus{
 
 .delete-icon:hover{
     cursor: pointer;
+}
+
+.load-more{
+    font-family: 'Cutive Mono', monospace;
+    font-size: 15px;
+    background-image: url(../images/another.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-weight: bolder;
 }

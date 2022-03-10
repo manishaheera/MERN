@@ -17,9 +17,9 @@ const LoginRegistration = (props) => {
     };
 
     return(
+
         <div className="wrapper">
         
-
             <Particles
                 id="tsparticles"
                 init={particlesInit}
@@ -87,7 +87,6 @@ const LoginRegistration = (props) => {
                         value: 0.5,
                     },
                     shape: {
-                        // type: "circle",
                         type: "image",
                         "image": {
                             "src": "https://cdn.clipartsfree.net/vector/medium/54438-white-heart-outline-thick-images.png"
@@ -103,37 +102,29 @@ const LoginRegistration = (props) => {
                 />
 
                 <h1>
-
                     <Typewriter 
                         onInit={(typewriter) => {typewriter.typeString("Compose").start();}} 
-                        />
-
+                    />
                 </h1>
             
             <img src={require('../images/bears.png')} alt="bears-main" className="bears" />
 
-
-            
                 <div className="login-reg-box">
+                    <h3> The 'bear' necesseties for all things noteworthy </h3> 
 
-                <h3> The 'bear' necesseties for all things noteworthy</h3> 
-
-                
                     <div className="login-reg">
-
-                        <Registration/>
+                        <Registration />
                         <Login />
-
                     </div>
-
                 </div>
 
-                <footer> © 2022 Compose | Seattle, Washington | All Rights Reserved. </footer>
+                <footer> 
+                    © 2022 Compose | Seattle, Washington | All Rights Reserved. 
+                </footer>
 
             </div>
 
     )
-
 }
 
 export default LoginRegistration;

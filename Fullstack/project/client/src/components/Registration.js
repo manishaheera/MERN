@@ -7,7 +7,7 @@ const Registration = (props) => {
     const [confirmReg, setConfirmReg] = useState("");
     const [errors, setErrors] = useState("");
 
-    //Single state of data to hold all data
+    // Single state of data to hold all data
     const [user, setUser] = useState({
         username: "",
         email: "",
@@ -50,8 +50,8 @@ const Registration = (props) => {
     }
 
     return(
-        <div className="register">
 
+        <div className="register">
 
             <h2> Register &hearts; </h2>
 
@@ -63,30 +63,29 @@ const Registration = (props) => {
 
             {
                 errors.username? 
-                    <p>{errors.username.message}</p>
+                    <p className="error-message"> {errors.username.message} </p>
                 :null
             }
 
             {
                 errors.email? 
-                    <p>{errors.email.message}</p>
+                    <p className="error-message"> {errors.email.message} </p>
                 :null
             }
 
             {
                 errors.password? 
-                    <p>{errors.password.message}</p>
+                    <p className="error-message"> {errors.password.message} </p>
                 :null
             }
 
             {
                 errors.confirmPassword? 
-                    <p>{errors.confirmPassword.message}</p>
+                    <p className="error-message"> {errors.confirmPassword.message}</p>
                 :null
             }   
             
             <form onSubmit={register}>
-
 
                 <div className="form-field">
                     <label> Username </label>
@@ -119,10 +118,8 @@ const Registration = (props) => {
 
             </form>
 
-
         </div>
     )
-
 }
 
 export default Registration;

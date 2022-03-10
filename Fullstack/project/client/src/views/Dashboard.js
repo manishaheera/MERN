@@ -3,6 +3,7 @@ import axios from "axios";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
 import {link, navigate} from '@reach/router';
+import ReactPaginate from 'react-paginate';
 import "../styles/Note.css";
 
 
@@ -10,12 +11,7 @@ const Dashboard = (props) => {
 
     const [user, setUser] = useState({});
     const [search, setSearch] = useState("");
-    
-
-
-
-    // const [posts, setPosts] = useState([]);
-    // const [loading, setLoading] = useState(false)
+    const [noteList, setNoteList] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
@@ -60,27 +56,22 @@ const Dashboard = (props) => {
             <div className="notepad">
 
                 <header>
-
                     <h7>
                         Notes
                     </h7>
                     
 
                     <div className="links" > 
-
                         <div className="welcome-message"> 
                             Welcome, {user.username} 
                         </div>
 
                         <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle</button>
                         <button onClick ={logout} className="logout-button"> Logout </button>
-
                     </div>
                     
 
                     <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />
-
-
                 </header>
 
                 <SearchBox 
@@ -88,6 +79,11 @@ const Dashboard = (props) => {
                 />
 
                 <Note
+                    noteList = {noteList.filter((note, index) =>
+                        note.content.toLowerCase().includes(search) ||
+                        note.title.toLowerCase().includes(search)
+                        )}
+                    setNoteList = {setNoteList}
                     user= {user}
                     setUser= {setUser}
                 />

@@ -2,8 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Note from "../components/Note";
 import SearchBox from "../components/SearchBox";
-import {link, navigate} from '@reach/router';
-import ReactPaginate from 'react-paginate';
+import {navigate} from '@reach/router';
 import "../styles/Note.css";
 
 
@@ -47,48 +46,47 @@ const Dashboard = (props) => {
     }
 
     return(
+
         <div className="dashboard">
 
             <div className="notes-container" >
 
-            <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
+                <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
-            <div className="notepad">
+                <div className="notepad">
 
-                <header>
-                    <h7>
-                        Notes
-                    </h7>
-                    
+                    <header>
+                        <h7>
+                            Notes
+                        </h7>
+                        
+                        <div className="links" > 
+                            <div className="welcome-message"> 
+                                Welcome, {user.username} 
+                            </div>
 
-                    <div className="links" > 
-                        <div className="welcome-message"> 
-                            Welcome, {user.username} 
+                            <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle </button>
+                            <button onClick ={logout} className="logout-button"> Logout </button>
                         </div>
+                        
+                        <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />
+                    </header>
 
-                        <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle</button>
-                        <button onClick ={logout} className="logout-button"> Logout </button>
-                    </div>
-                    
+                    <SearchBox 
+                    handleSearchNote = {setSearch}
+                    />
 
-                    <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />
-                </header>
+                    <Note
+                        noteList = {noteList.filter((note, index) =>
+                            note.content.toLowerCase().includes(search) ||
+                            note.title.toLowerCase().includes(search)
+                            )}
+                        setNoteList = {setNoteList}
+                        user= {user}
+                        setUser= {setUser}
+                    />
 
-                <SearchBox 
-                handleSearchNote = {setSearch}
-                />
-
-                <Note
-                    noteList = {noteList.filter((note, index) =>
-                        note.content.toLowerCase().includes(search) ||
-                        note.title.toLowerCase().includes(search)
-                        )}
-                    setNoteList = {setNoteList}
-                    user= {user}
-                    setUser= {setUser}
-                />
-
-            </div>
+                </div>
 
             </div>
             

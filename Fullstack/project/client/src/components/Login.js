@@ -31,7 +31,7 @@ const Login = (props) => {
             // localStorage will allow us to store this current user's id in storage. This way, we can use it on a button for the current user to get to their profile page.
             // localStorage.setItem("userId", res.data.userId);
             // Utilizing navigate's second arrgument to pass our userId forward
-            //Documentation: https://reach.tech/router/api/navigate
+            // Documentation: https://reach.tech/router/api/navigate
             setErrors("");
             navigate("/compose/dashboard")
         })

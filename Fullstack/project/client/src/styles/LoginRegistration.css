@@ -30,8 +30,7 @@ h1{
     color: white;
 }
 
-
-.login-reg-box {
+.login-reg-box{
     background: linear-gradient(transparent,rgb(211, 173, 179),rgb(219, 160, 170), rgb(197, 176, 167),rgb(185, 171, 151), rgb(230, 198, 139));
     border: 5px solid #351516;
     padding: 10px;
@@ -65,7 +64,6 @@ h3{
 .register{
     margin-bottom: 20px;
     padding: 10px;
-
 }
 
 .login{

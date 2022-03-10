@@ -1,4 +1,3 @@
-
 .spiral-bound{
     max-width: 100%;
 }
@@ -22,7 +21,6 @@ h7{
 } 
 
 .welcome-message{
-    /* color: rgb(89, 61, 61); */
     color: white;
     font-family: 'Pacifico', cursive;
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
@@ -35,9 +33,6 @@ h7{
 }
 
 .logout-button{
-    /* color: #7f4510; */
-    /* font-weight: bolder; */
-    /* font-family: 'Cutive Mono', monospace; */
     padding: 3px;
     margin-left: 10px;
     height: 30px;
@@ -106,6 +101,7 @@ h7{
     justify-content: space-between;
     white-space: pre-wrap;
     border: 2.5px solid #351516;
+    /* margin-bottom: 20px; */
 }
 
 mark{
@@ -129,7 +125,6 @@ mark{
     background: url("../images/note.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
 .error-message{

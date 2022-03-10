@@ -24,11 +24,6 @@ header2{
     justify-content: space-evenly;
 }
 
-.color-input{
-    outline:none;
-    border: none;
-}
-
 .doodle{
     border-top: none;
     border: 8px solid #929798;

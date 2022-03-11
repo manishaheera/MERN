@@ -1,6 +1,7 @@
 import React,{useRef, useEffect, useState} from "react";
 import axios from "axios";
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import { SliderPicker } from 'react-color';
 import {navigate} from "@reach/router";
 import "../styles/Canvas.css";
 
@@ -8,8 +9,9 @@ import "../styles/Canvas.css";
 const Canvas = (props) => {
 
     const [user, setUser] = useState("");
-    const [drawingMode, setDrawingMode] = useState(true);
-    const thisCanvas = useRef(null);
+    const [colorSwatch, setColorSwatch] = useState("#ff0000");
+    const thisCanvas = useRef(null); 
+    const thisSlider = useRef(null);
     
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
@@ -48,7 +50,7 @@ const Canvas = (props) => {
         border: '0.0625rem solid #9c9c9c',
         borderRadius: '0.25rem',
     };
-
+    
 return (
 
     <div className="canvas-container"> 
@@ -58,11 +60,12 @@ return (
         <header2>
             <h7> Doodle</h7> 
 
-            <div className="welcome-message"> 
+            {/* <div className="welcome-message"> 
                 Welcome, {user.username} 
-            </div>
+            </div> */}
 
             <button onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
+            <button onClick={()=> navigate("/compose/dashboard")}> Locker </button>
             <button onClick ={logout}> Logout </button>
 
             <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />
@@ -70,50 +73,37 @@ return (
 
         <div className="doodle-controller">
 
-            <button onClick={() => {
-                thisCanvas.current.
-                    eraseMode(false);
-            }}>
+            <button onClick={() => {thisCanvas.current.eraseMode(false);}}>
                 Pen
             </button>
 
-            <button onClick={() => {
-            thisCanvas.current.
-                eraseMode(true);
-            }}>
+            <button onClick={() => {thisCanvas.current.eraseMode(true);}}>
                 Erase
             </button>
 
-            <button onClick={() => {
-                thisCanvas.current.
-                    undo();
-            }}>
+            <button onClick={() => {thisCanvas.current.undo();}}>
                 Undo
             </button>
 
-            <button onClick={() => {
-                thisCanvas.current.
-                    redo();
-            }}>
+            <button onClick={() => {thisCanvas.current.redo();}}>
                 Redo
             </button>
 
-            <button onClick={() => {
-            thisCanvas.current.
-                resetCanvas();
-            }}>
+            <button onClick={() => {thisCanvas.current.resetCanvas();}}>
                 Reset
             </button>
 
-            <button onClick={() => {
-            thisCanvas.current.
-                exportImage("png");
-
-            }}>
-                Export
+            <button onClick={() => {thisCanvas.current.exportImage("png");}}>
+                Save to Locker
             </button>
 
-        </div>
+        </div><br></br>
+
+        <SliderPicker
+            ref = {thisSlider}
+            color = {colorSwatch}
+            onChangeComplete = {(color) => {setColorSwatch(color.hex)}}
+            /> <br></br>
 
         <div className="doodle">
             <ReactSketchCanvas
@@ -122,10 +112,8 @@ return (
                 width="100%"
                 height="900px"
                 strokeWidth={5}
-                // strokeColor={ "#" + Math.floor(Math.random() * 12283445).toString(16)} 
-                strokeColor="white"
+                strokeColor= {colorSwatch}
                 canvasColor="#312B2A"
-                drawMode ={drawingMode}
             />
         </div>
 

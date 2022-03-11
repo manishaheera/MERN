@@ -67,6 +67,7 @@ const Dashboard = (props) => {
                             </div>
 
                             <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle </button>
+                            <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Locker </button>
                             <button onClick ={logout} className="logout-button"> Logout </button>
                         </div>
                         

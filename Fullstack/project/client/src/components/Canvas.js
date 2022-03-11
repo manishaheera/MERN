@@ -9,7 +9,8 @@ const Canvas = (props) => {
 
     const [user, setUser] = useState("");
     const [drawingMode, setDrawingMode] = useState(true);
-
+    const thisCanvas = useRef(null);
+    
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
             { withCredentials: true }
@@ -48,8 +49,6 @@ const Canvas = (props) => {
         borderRadius: '0.25rem',
     };
 
-    const thisCanvas = useRef(null)
-
 return (
 
     <div className="canvas-container"> 
@@ -70,9 +69,50 @@ return (
         </header2> 
 
         <div className="doodle-controller">
-            <button onClick={(e)=> setDrawingMode(false)}> Erase </button>
-            <button> Draw </button>
-            <button onClick={(e)=> window.location.reload()}> Clear </button>
+
+            <button onClick={() => {
+                thisCanvas.current.
+                    eraseMode(false);
+            }}>
+                Pen
+            </button>
+
+            <button onClick={() => {
+            thisCanvas.current.
+                eraseMode(true);
+            }}>
+                Erase
+            </button>
+
+            <button onClick={() => {
+                thisCanvas.current.
+                    undo();
+            }}>
+                Undo
+            </button>
+
+            <button onClick={() => {
+                thisCanvas.current.
+                    redo();
+            }}>
+                Redo
+            </button>
+
+            <button onClick={() => {
+            thisCanvas.current.
+                resetCanvas();
+            }}>
+                Reset
+            </button>
+
+            <button onClick={() => {
+            thisCanvas.current.
+                exportImage("png");
+
+            }}>
+                Export
+            </button>
+
         </div>
 
         <div className="doodle">

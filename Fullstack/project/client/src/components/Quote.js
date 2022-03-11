@@ -21,7 +21,7 @@ const Quote = (props) => {
     return(
 
         <div className="quote-box">
-            <h4> Quote </h4>
+            <h4> " "</h4>
         </div>
     )
 }

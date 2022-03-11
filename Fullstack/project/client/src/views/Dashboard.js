@@ -66,9 +66,9 @@ const Dashboard = (props) => {
                                 Welcome, {user.username} 
                             </div>
 
-                            <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Doodle </button>
-                            <button onClick={()=> navigate("/compose/doodle")} className="logout-button"> Locker </button>
-                            <button onClick ={logout} className="logout-button"> Logout </button>
+                            <button className="header" onClick={()=> navigate("/compose/doodle")}> Doodle </button>
+                            <button className="header" onClick={()=> navigate("/compose/doodle")}>  Gallery </button>
+                            <button className="header" onClick ={logout}> Logout </button>
                         </div>
                         
                         <img src={require('../images/dashboard.png')} alt="bears-dashboard" className="bears-dash" />

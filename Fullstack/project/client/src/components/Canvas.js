@@ -10,8 +10,8 @@ const Canvas = (props) => {
 
     const [user, setUser] = useState("");
     const [colorSwatch, setColorSwatch] = useState("#ff0000");
+    const [doodleList, setDoodleList] = useState([])
     const thisCanvas = useRef(null); 
-    const thisSlider = useRef(null);
     
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
@@ -64,56 +64,69 @@ return (
                 Welcome, {user.username} 
             </div> */}
 
-            <button onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
-            <button onClick={()=> navigate("/compose/dashboard")}> Locker </button>
-            <button onClick ={logout}> Logout </button>
+            <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
+            <button className="header" onClick={()=> navigate("/compose/dashboard")}> Gallery </button>
+            <button className="header" onClick ={logout}> Logout </button>
 
             <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />
         </header2> 
 
         <div className="doodle-controller">
 
-            <button onClick={() => {thisCanvas.current.eraseMode(false);}}>
+            <button className="controls" onClick={() => {thisCanvas.current.eraseMode(false);}}>
                 Pen
             </button>
 
-            <button onClick={() => {thisCanvas.current.eraseMode(true);}}>
+            <button className="controls" onClick={() => {thisCanvas.current.eraseMode(true);}}>
                 Erase
             </button>
 
-            <button onClick={() => {thisCanvas.current.undo();}}>
+            <button className="controls" onClick={() => {thisCanvas.current.undo();}}>
                 Undo
             </button>
 
-            <button onClick={() => {thisCanvas.current.redo();}}>
+            <button className="controls" onClick={() => {thisCanvas.current.redo();}}>
                 Redo
             </button>
 
-            <button onClick={() => {thisCanvas.current.resetCanvas();}}>
+            <button className="controls" onClick={() => {thisCanvas.current.resetCanvas();}}>
                 Reset
             </button>
 
-            <button onClick={() => {thisCanvas.current.exportImage("png");}}>
-                Save to Locker
-            </button>
+            <button className="controls" onClick={() => 
+            {/* // thisCanvas.current.
+            //     exportImage("png")
+            //         .then((data) => {
+            //             console.log(data);
+            //             console.log("blahahsahsha")
+            //             setDoodleList(data);
+            //         })
+            //         .catch((err) => {
+            //             console.log(err);
+            //         });
+            //     } */
+                thisCanvas.current.exportPaths();}
+            }
+            >
+                Save
+            </button> 
 
         </div><br></br>
 
         <SliderPicker
-            ref = {thisSlider}
-            color = {colorSwatch}
-            onChangeComplete = {(color) => {setColorSwatch(color.hex)}}
-            /> <br></br>
+            color= {colorSwatch}
+            onChangeComplete= {(color)=> {setColorSwatch(color.hex)}}
+        /> <br></br>
 
         <div className="doodle">
             <ReactSketchCanvas
-                ref = {thisCanvas}
-                style={styles}
-                width="100%"
-                height="900px"
-                strokeWidth={5}
+                ref= {thisCanvas}
+                style= {styles}
+                width= "100%"
+                height= "800px"
+                strokeWidth= {4}
                 strokeColor= {colorSwatch}
-                canvasColor="#312B2A"
+                canvasColor= "#312B2A"
             />
         </div>
 

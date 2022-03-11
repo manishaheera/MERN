@@ -18,10 +18,19 @@ header2{
     padding: 5px;
 }
 
+.header{
+    font-family: 'Cutive Mono', monospace;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
 .doodle-controller{
     padding: 5px;
     display: flex;
     justify-content: space-evenly;
+    /* background-color: rgb(171, 148, 151); */
+    border: 5px solid #351516;
+    border-top: none;
 }
 
 .doodle{
@@ -29,6 +38,13 @@ header2{
     border: 8px solid #929798;
     border-bottom: 40px solid rgb(69, 55, 55);
     outline: 3px solid rgb(0, 0, 0);
+}
+
+.controls{
+    font-family: 'Cutive Mono', monospace;
+    font-size: larger;
+    /* color: white; */
+    font-weight: bolder;
 }
 
 button{

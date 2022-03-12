@@ -22,5 +22,6 @@ app.use(cookieParser());
 require("./config/mongoose.config"); 
 require("./routes/note.routes")(app);
 require("./routes/user.routes")(app);
+require("./routes/drawing.routes")(app);
 
 app.listen(process.env.MY_PORT, ()=> console.log(`Server connected to port ${process.env.MY_PORT}`))

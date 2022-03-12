@@ -8,9 +8,10 @@ import "../styles/Canvas.css";
 
 const Canvas = (props) => {
 
+    const {doodles, setDoodles} = props;
+    const [drawing, setDrawing] = useState("")
     const [user, setUser] = useState("");
     const [colorSwatch, setColorSwatch] = useState("#ff0000");
-    const [doodleList, setDoodleList] = useState([])
     const thisCanvas = useRef(null); 
     
     useEffect(() => {
@@ -50,6 +51,48 @@ const Canvas = (props) => {
         border: '0.0625rem solid #9c9c9c',
         borderRadius: '0.25rem',
     };
+
+    const exportDrawing = () => {
+        thisCanvas.current
+            .exportImage("png")
+            .then((res) => {
+                console.log(res)
+                setDrawing(res, ...drawing);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    const addDrawing = (e) => {
+        e.preventDefault();
+
+        axios
+            .post(`http://localhost:8000/api/drawings/${user.username}`, {
+                image: drawing
+            },
+            {
+                // forces sending of the credentials/cookies so they can be updated
+                // XMLHttpRequest from a different domain cannot set cookie values for their own domain
+                // unless withCredentials is set to true before making the request
+                withCredentials: true,
+            },
+            )
+            .then((res) => {
+                console.log(res.data);
+                console.log(res.data);
+                console.log(" drawing sucess ")
+                setDoodles([res.data, ...doodles]);
+                // setDoodleImage("");
+                // setNoteContent("");
+                // setErrors("");
+
+            })
+            .catch((err) => {
+                console.log(err);
+                // setErrors(err.response.data.errors)
+            })
+    }
     
 return (
 
@@ -93,23 +136,13 @@ return (
                 Reset
             </button>
 
-            <button className="controls" onClick={() => 
-            {/* // thisCanvas.current.
-            //     exportImage("png")
-            //         .then((data) => {
-            //             console.log(data);
-            //             console.log("blahahsahsha")
-            //             setDoodleList(data);
-            //         })
-            //         .catch((err) => {
-            //             console.log(err);
-            //         });
-            //     } */
-                thisCanvas.current.exportPaths();}
-            }
-            >
+            <button className="controls" onClick= {exportDrawing} >
                 Save
-            </button> 
+            </button>
+
+            <button className="controls" onClick= {addDrawing} >
+                Add to gallery
+            </button>
 
         </div><br></br>
 

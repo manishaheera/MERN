@@ -1,6 +1,8 @@
 *{
     margin:0px;
     padding:0px;
+    
+
 }
 
 .wrapper{
@@ -11,6 +13,8 @@
     margin-left: auto;
     margin-right: auto;
     max-height: 100vh;
+    /* transform: scale(.75); */
+    /* transform-origin: 0 0; */
 }
 
 .bears{
@@ -77,6 +81,10 @@ h2{
     margin-bottom: 5px;
 }
 
+label{
+    font-size: larger;
+}
+
   /* h6 & p are for success and error messages */
 h6{
     font-weight: bolder;
@@ -110,7 +118,7 @@ h6{
 }
 
 .terms-policy{
-    font-size: 10px;
+    font-size: 15px;
 }
 
 terms{

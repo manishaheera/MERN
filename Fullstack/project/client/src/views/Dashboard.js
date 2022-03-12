@@ -67,7 +67,7 @@ const Dashboard = (props) => {
                             </div>
 
                             <button className="header" onClick={()=> navigate("/compose/doodle")}> Doodle </button>
-                            <button className="header" onClick={()=> navigate("/compose/doodle")}>  Gallery </button>
+                            <button className="header" onClick={()=> navigate("/compose/gallery")}>  Gallery </button>
                             <button className="header" onClick ={logout}> Logout </button>
                         </div>
                         

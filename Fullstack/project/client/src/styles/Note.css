@@ -58,6 +58,7 @@ h7{
     margin-left: auto;
     min-height: 100vh;
     border-top: none;
+    /* transform: scale(.55); */
 }
 
 h4{

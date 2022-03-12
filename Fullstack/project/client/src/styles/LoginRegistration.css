@@ -47,16 +47,6 @@ h1{
     justify-content: space-evenly;
 }
 
-h3{
-    font-weight: bolder;
-    font-size: 15px;
-    font-family: 'Pacifico', cursive;
-    font-family: 'Cutive Mono', monospace;
-    justify-content: end;
-    display: flex;
-    margin-left: 450px;
-}
-
 .register{
     margin-bottom: 20px;
     padding: 10px;
@@ -67,16 +57,28 @@ h3{
     padding: 10px;
 }
 
+h3{
+    margin-top: 15px;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Cutive Mono', monospace;
+    justify-content: end;
+    display: flex;
+}
+
 h2{
     font-size: 35px;
     font-family: 'Pacifico', cursive;
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 label{
     font-size: larger;
+    width: 130px;
+    display: inline-block;
 }
 
   /* h6 & p are for success and error messages */

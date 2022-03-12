@@ -21,7 +21,7 @@ const Quote = (props) => {
     return(
 
         <div className="quote-box">
-            Quote of the day 
+            <b> QUOTE OF THE DAY </b>
             <h4> " Every hour of every day is an unspeakably perfect miracle. " - Walt Whitman </h4>
         </div>
     )

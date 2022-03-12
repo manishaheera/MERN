@@ -138,7 +138,7 @@ return (
             </button>
 
             <button className="controls" onClick= {exportDrawing} >
-                Save Pr
+                Save
             </button>
 
             <button className="controls" onClick= {addDrawing} >

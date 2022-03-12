@@ -109,9 +109,9 @@ const Registration = (props) => {
 
                 <div className="form-field">
                     <input type="checkbox" className="LR-input" required="required" />
-                    <label className="terms-policy"> 
+                    <text className="terms-policy"> 
                         I  agree with the <terms> Terms & Conditions</terms> and <terms> Privacy Policy </terms>
-                    </label>
+                    </text>
                 </div>
 
                 <button className="register-button"> Register </button>

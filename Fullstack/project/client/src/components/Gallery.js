@@ -9,6 +9,7 @@ const Gallery = (props) => {
 
     const [doodles, setDoodles] = useState([]);
     const [user, setUser] = useState("");
+    const [visibleDrawings, setVisibleDrawings] = useState(6);
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/users/secure",
@@ -34,6 +35,10 @@ const Gallery = (props) => {
         .catch((err) => console.log(err))
     }, [])
 
+    const loadMoreDrawings = () => {
+        setVisibleDrawings((prevValue) => prevValue + 3);
+    }
+
     const deleteDrawing = (doodleId) => {
         axios.delete(`http://localhost:8000/api/drawings/${doodleId}`)
         .then((res)=> { 
@@ -44,45 +49,63 @@ const Gallery = (props) => {
         .catch((err)=> console.log(err))
     }
 
+    const logout = (e) => {
+        axios
+            .post(
+                "http://localhost:8000/api/users/logout",
+                {}, // As a post request, we MUST send something with our request.
+                // Because we're not adding anything, we can send a simple MT object 
+                {
+                    withCredentials: true,
+                },
+            )
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/")
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     return(
 
         <div className="gallery">
         
-        <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
+            <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
-        <header2>
-            <h7> Doodle</h7> 
+            <header3>
+                <h7> Gallery</h7> 
 
-            {/* <div className="welcome-message"> 
-                Welcome, {user.username} 
-            </div> */}
+                <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
+                <button className="header" onClick={()=> navigate("/compose/doodle")}> Doodle </button>
+                <button className="header" onClick ={logout}> Logout </button>
 
-            <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
-            <button className="header" onClick={()=> navigate("/compose/dashboard")}> Gallery </button>
-            {/* <button className="header" onClick ={logout}> Logout </button> */}
+                <img src={require('../images/gallery.png')} alt="bears-doodle" className="bears-doodle" />
+            </header3> 
 
-            <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />
-        </header2> 
+            <div className="drawing-list" >
 
-        <div className="drawing-list" >
+                {
+                    doodles.slice(0,visibleDrawings).map((doodle,index)=> (
 
-        {
-                doodles.map((doodle,index)=> (
+                        <div key={doodle._id} className="drawing">
 
-                    <div key={doodle._id} className="drawing">
+                            <img className="image" src={doodle.image} />
 
-                    <img className="image" src = {doodle.image} />
-
-                        <div className= "note-footer">
+                            <div className= "drawing-footer">
                                 {doodle.date} <br></br>
                                 <MdDeleteForever className="delete-icon" onClick={()=> deleteDrawing(doodle._id)}/>
-                        </div>
+                            </div>
 
-                    </div>
+                        </div>
                     
-                ))
-            }
+                    ))
+                }
             </div>
+
+            <button className="load-drawings" onClick={loadMoreDrawings}> LOAD MORE DRAWINGS...</button>
 
         </div>
     )

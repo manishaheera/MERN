@@ -27,26 +27,6 @@ const Canvas = (props) => {
             })
     }, [])
 
-    const logout = (e) => {
-        axios
-            .post(
-                "http://localhost:8000/api/users/logout",
-                {}, // As a post request, we MUST send something with our request.
-                // Because we're not adding anything, we can send a simple MT object 
-                {
-                    withCredentials: true,
-                },
-            )
-            .then((res) => {
-                console.log(res);
-                console.log(res.data);
-                navigate("/")
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-
     const styles = {
         border: '0.0625rem solid #9c9c9c',
         borderRadius: '0.25rem',
@@ -67,6 +47,16 @@ const Canvas = (props) => {
     const addDrawing = (e) => {
         e.preventDefault();
 
+        // thisCanvas.current
+        //     .exportImage("png")
+        //     .then((res) => {
+        //         console.log(res)
+        //         setDrawing(res, ...drawing);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     })
+
         axios
             .post(`http://localhost:8000/api/drawings/${user.username}`, {
                 image: drawing
@@ -83,17 +73,32 @@ const Canvas = (props) => {
                 console.log(res.data);
                 console.log(" drawing sucess ")
                 setDoodles([res.data, ...doodles]);
-                // setDoodleImage("");
-                // setNoteContent("");
-                // setErrors("");
-
             })
             .catch((err) => {
                 console.log(err);
-                // setErrors(err.response.data.errors)
             })
     }
-    
+
+    const logout = (e) => {
+        axios
+            .post(
+                "http://localhost:8000/api/users/logout",
+                {}, // As a post request, we MUST send something with our request.
+                // Because we're not adding anything, we can send a simple MT object 
+                {
+                    withCredentials: true,
+                },
+            )
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/")
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
 return (
 
     <div className="canvas-container"> 
@@ -103,12 +108,8 @@ return (
         <header2>
             <h7> Doodle</h7> 
 
-            {/* <div className="welcome-message"> 
-                Welcome, {user.username} 
-            </div> */}
-
             <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
-            <button className="header" onClick={()=> navigate("/compose/dashboard")}> Gallery </button>
+            <button className="header" onClick={()=> navigate("/compose/gallery")}> Gallery </button>
             <button className="header" onClick ={logout}> Logout </button>
 
             <img src={require('../images/doodle.png')} alt="bears-doodle" className="bears-doodle" />

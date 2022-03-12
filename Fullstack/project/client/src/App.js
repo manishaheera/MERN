@@ -24,10 +24,7 @@ function App() {
         setDoodles = {setDoodles}
         />
 
-        <Gallery path="/compose/gallery"
-        doodles = {doodles}
-        doodle = {setDoodles}
-        />
+        <Gallery path="/compose/gallery"/>
 
       </Router>
     </div>

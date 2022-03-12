@@ -122,7 +122,7 @@ return (
             </button>
 
             <button className="controls" onClick={() => {thisCanvas.current.eraseMode(true);}}>
-                Erase
+                Eraser
             </button>
 
             <button className="controls" onClick={() => {thisCanvas.current.undo();}}>
@@ -134,7 +134,7 @@ return (
             </button>
 
             <button className="controls" onClick={() => {thisCanvas.current.resetCanvas();}}>
-                Reset
+                Clear
             </button>
 
             <button className="controls" onClick= {exportDrawing} >
@@ -142,7 +142,7 @@ return (
             </button>
 
             <button className="controls" onClick= {addDrawing} >
-                Add to gallery
+                Add to Gallery
             </button>
 
         </div><br></br>

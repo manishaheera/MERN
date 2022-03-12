@@ -11,7 +11,7 @@ header{
     padding: 5px;
 }
 
-h7{
+strong{
     font-size: 80px;
     font-family: 'Pacifico', cursive;
     filter: drop-shadow(0.5rem 0 0.95rem rgb(255, 255, 255));

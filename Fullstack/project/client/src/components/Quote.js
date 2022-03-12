@@ -7,8 +7,8 @@ const Quote = (props) => {
     const [quoteOfDay, setQuoteOfDay] = useState("")
 
     useEffect(() => {
+        
         axios.get("https://zenquotes.io/api/random", {
-
         })
         .then((res)=>{
             console.log(res);

@@ -106,7 +106,7 @@ return (
         <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
         <header2>
-            <h7> Doodle</h7> 
+            <strong> Doodle</strong> 
 
             <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
             <button className="header" onClick={()=> navigate("/compose/gallery")}> Gallery </button>

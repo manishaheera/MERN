@@ -76,7 +76,7 @@ const Gallery = (props) => {
             <img src={require('../images/spiral.png')} alt="spiral" className="spiral-bound" />
 
             <header3>
-                <h7> Gallery</h7> 
+                <strong> Gallery</strong> 
 
                 <button className="header" onClick={()=> navigate("/compose/dashboard")}> Dashboard </button>
                 <button className="header" onClick={()=> navigate("/compose/doodle")}> Doodle </button>

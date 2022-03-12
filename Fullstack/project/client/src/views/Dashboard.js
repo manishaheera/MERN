@@ -57,9 +57,9 @@ const Dashboard = (props) => {
                 <div className="notepad">
 
                     <header>
-                        <h7>
+                        <strong>
                             Notes
-                        </h7>
+                        </strong>
                         
                         <div className="links" > 
                             <div className="welcome-message"> 

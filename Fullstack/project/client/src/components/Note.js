@@ -51,7 +51,7 @@ const Note = (props) => {
 
                         <mark> {note.title} </mark>
 
-                        <p class="note-content">
+                        <p className="note-content">
                             {note.content}
                         </p>
 

@@ -12,12 +12,11 @@ app.use(express.urlencoded({ extended:true }));
 
 app.use(cors({
     credentials: true, 
-    origin:"http://localhost:3000",
+    origin: "http://localhost:3000",
 }))
 
 // Configures server to accept and update cookies
 app.use(cookieParser());
-
 
 require("./config/mongoose.config"); 
 require("./routes/note.routes")(app);

@@ -4,16 +4,14 @@ import axios from "axios";
 
 const Quote = (props) => {
 
-    const [quoteOfDay, setQuoteOfDay] = useState("")
+    const [quote, setQuote] = useState([]);
 
     useEffect(() => {
-        
-        axios.get("https://zenquotes.io/api/random", {
-        })
+        axios.get("http://favqs.com/api/qotd")
         .then((res)=>{
-            console.log(res);
             console.log(res.data);
-            setQuoteOfDay(res.data);
+            setQuote(res.data.quote)
+            // setQuote(res.data.results);
         })
         .catch((err) => console.log(err))
     }, [])
@@ -22,7 +20,7 @@ const Quote = (props) => {
 
         <div className="quote-box">
             <b> QUOTE OF THE DAY </b>
-            <h4> " Every hour of every day is an unspeakably perfect miracle. " - Walt Whitman </h4>
+            <h4> " {quote.body} " <br></br>- {quote.author} </h4>
         </div>
     )
 }

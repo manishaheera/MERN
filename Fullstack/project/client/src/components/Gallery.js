@@ -103,6 +103,7 @@ const Gallery = (props) => {
                     
                     ))
                 }
+                
             </div>
 
             <button className="load-drawings" onClick={loadMoreDrawings}> LOAD MORE DRAWINGS...</button>

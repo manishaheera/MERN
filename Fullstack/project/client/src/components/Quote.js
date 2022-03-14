@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Quote = (props) => {
 
-    const [quote, setQuote] = useState([]);
+    const [quote, setQuote] = useState("");
 
     useEffect(() => {
         axios.get("http://favqs.com/api/qotd")
@@ -20,7 +20,7 @@ const Quote = (props) => {
 
         <div className="quote-box">
             <b> QUOTE OF THE DAY </b>
-            <h4> " {quote.body} " <br></br>- {quote.author} </h4>
+            <h4> " {quote.body} " - {quote.author} </h4>
         </div>
     )
 }

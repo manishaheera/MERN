@@ -1,0 +1,11 @@
+// Simply return the given input
+function myFunction(a){
+return a
+}
+
+
+
+
+// Write a function that takes an array (a) as argument
+// Return the number of elements in a
+

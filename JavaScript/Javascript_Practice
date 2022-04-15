@@ -3,9 +3,19 @@ function myFunction(a){
 return a
 }
 
-
-
-
 // Write a function that takes an array (a) as argument
 // Return the number of elements in a
+
+
+// Reverse String
+
+function reverseString (string) {
+    const stringArray = string.split('');
+    stringArray.reverse();
+    console.log(stringArray)
+    return stringArray.join('');
+}
+
+
+
 

@@ -152,10 +152,15 @@ function Fibonacci() {
 console.log(Fibonacci());
 
 // add values to front or end of array
+// es6
 
 var myArray = ['a','b','c','d']
-newArray = ['start',...myArray,'end']
+newArray = ['start',...myArray,'end'] // spread operators
 console.log(newArray)
+
+
+// myArray.push("end")
+// myArray.unshift("start")
 
 // Roman to Int
 
@@ -192,3 +197,92 @@ var romanToInt = function(s) {
 };
 
 console.log(romanToInt('VLCM'));
+
+
+//Hashtable typically irreversible, deterministic, same input should have same output
+
+function hashStringToInt(s) {
+    let hash = 
+}
+
+class Hashtable {
+    table = new Array(100)
+
+    setItem = (key, value) => {
+        const idx = hashStringToInt(key)
+        this.table[idx] = value
+    };
+    getItem = key => {
+        const idx = hashStringToInt(key)
+        return this.table[idx];
+    };
+}
+
+const myTable = new Hashtable();
+myTable.setItem("firstName","Bob");
+myTable.getItem("firstName");
+console.log(myTable.getItem("firstName"))
+
+
+
+
+// create private variable in Javascript
+//must reassign
+
+function secret(){
+    var private = "super secret";
+
+    return function(){
+        return private
+    }
+}
+
+var getPrivate = secret();
+console.log(getPrivate())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
